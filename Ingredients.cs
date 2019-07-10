@@ -8,5 +8,15 @@ namespace LemonadeStand
 {
     class Ingredients
     {
+        //member variables
+
+        //ctor
+        public Ingredients()
+        {
+
+        }
+        //member methods
+
+        //last line of big block
     }
 }

@@ -8,5 +8,17 @@ namespace LemonadeStand
 {
     class Day
     {
+        //member variables
+
+        //ctor
+        public Day()
+        {
+            
+        }
+        //member methods
+
+
+
+        //last line of big block
     }
 }
