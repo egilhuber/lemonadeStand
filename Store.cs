@@ -81,6 +81,8 @@ namespace LemonadeStand
         public double SellLemons()
         {
             lemonsPrice = RandomNumber(10, 20);
+            Console.WriteLine($"You spent {sugarTotal} cents on sugar");
+            Console.WriteLine("---");
             Console.WriteLine($"Lemons are {lemonsPrice} cents each.");
             Console.WriteLine("How many lemons would you like to purchase?");
             lemonsQuant = Convert.ToInt32(Console.ReadLine());
@@ -90,6 +92,8 @@ namespace LemonadeStand
         public double SellCups()
         {
             cupsPrice = RandomNumber(1, 15);
+            Console.WriteLine($"You spent {lemonsTotal} cents on lemons.");
+            Console.WriteLine("---");
             Console.WriteLine($"Cups are {cupsPrice} cents each");
             Console.WriteLine("How many cups would you like to purchase?");
             cupsQuant = Convert.ToInt32(Console.ReadLine());
@@ -99,6 +103,8 @@ namespace LemonadeStand
         public double SellIce()
         {
             icePrice = RandomNumber(1, 35);
+            Console.WriteLine($"You spent {cupsTotal} cents on cups.");
+            Console.WriteLine("---");
             Console.WriteLine($"Ice is {icePrice} cents per pound.");
             Console.WriteLine("How many pounds of ice would you like to purchase?");
             iceQuant = Convert.ToInt32(Console.ReadLine());
@@ -108,12 +114,14 @@ namespace LemonadeStand
         public double AddToCart(double balance)
         {
             string response;
-            Console.WriteLine($"You have {balance} cents. Your cart total is: {cartTotal}. Complete purchase?");
+            Console.WriteLine($"You spent {iceTotal} cents on ice.");
+            Console.WriteLine("---");
+            Console.WriteLine($"You have {balance} cents. Your cart total is: {cartTotal} cents. Complete purchase?");
             response = Console.ReadLine();
             if (response == "yes" && balance > cartTotal)
             {
                 newBalance = balance - cartTotal;
-                Console.WriteLine($"Your new balance is {newBalance}");
+                Console.WriteLine($"Your new balance is {newBalance} cents");
                 return newBalance;
             }
             else if (response == "yes" && balance < cartTotal)
@@ -121,7 +129,7 @@ namespace LemonadeStand
                 Console.WriteLine("Insufficient funds. How much would you like to borrow from the lemon tree?");
                 BorrowMoney();
                 newBalance = balance + amountToBorrow;
-                Console.WriteLine($"Your new balance before purchase is {newBalance}.");
+                Console.WriteLine($"Your new balance before purchase is {newBalance} cents.");
                 newBalance -= cartTotal;
                 return newBalance;
             }

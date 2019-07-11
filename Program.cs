@@ -50,6 +50,7 @@ namespace LemonadeStand
 
             for (int i = 0; i < 7; i++)
             {
+                newDay.cupsSold = 0;
                 Console.Clear();
                 Console.WriteLine("---");
                 Console.WriteLine($"Day {i + 1}. Expect {weather.WordsWeekWeather[i]} weather.");

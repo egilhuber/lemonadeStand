@@ -24,7 +24,13 @@ namespace LemonadeStand
             //display controls (like ability to use "quit" keyword at any time, "store" between days, etc 
             //have a "press enter to continue" that clears the screen 
 
-            Console.WriteLine("game rules and controls go here. press enter to clear screen");
+            Console.WriteLine("You have decided to open a lemonade stand. You have 2000 cents to start with. \n" +
+                "Use this money to purchase supplies so that you can start your first day off right! Prices at the \n" +
+                "store change daily, so it may be worth it to hold out for a better price. You've heard from other food stands \n" +
+                "that people in this area sure are picky. Things such as the weather, price, and recipe will have an impact on \n" +
+                "whether they make a purchase or not. You will have the opportunity to check the weather and change your recipe \n" +
+                "and prices each day before you open. If you ever need to purchase more supplies than have money, The Lemon Tree \n" +
+                "will lend you money - but you'll have to pay it back! Good luck. You have 7 days.");
             Console.ReadLine();
             Console.Clear();
         }

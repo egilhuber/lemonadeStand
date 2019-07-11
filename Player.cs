@@ -37,10 +37,16 @@ namespace LemonadeStand
         {
             Console.WriteLine("How many cups of sugar would you like per pitcher?");
             cupsSugar = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Your recipe will have {cupsSugar} cups of sugar per pitcher.");
+            Console.WriteLine("---");
             Console.WriteLine("How many lemons would you like per pitcher?");
             manyLemons = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Your recipe will have {manyLemons} lemons per pitcher.");
+            Console.WriteLine("---");
             Console.WriteLine("How many pounds of ice would you like per pitcher?");
             poundsOfIce = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Your recipe will have {poundsOfIce} pounds of ice per pitcher.");
+            Console.WriteLine("---");
             lemonadeRecipe = cupsSugar + manyLemons + poundsOfIce;
             return lemonadeRecipe;
         }
@@ -49,6 +55,7 @@ namespace LemonadeStand
         {
             Console.WriteLine("How many cents would you like to charge per cup of lemonade?");
             priceOfLemonade = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Your lemonade will cost {priceOfLemonade} cents per cup.");
             return priceOfLemonade;
         }
 
