@@ -29,7 +29,7 @@ namespace LemonadeStand
             this.costPref = costPref;
         }
         //member methods
-        public bool DecideToBuy(int theWeather, int theSugar, int theLemons, int theIce, int theCost, int cashRegister, int theCups)
+        public bool DecideToBuy(int theWeather, int theSugar, int theLemons, int theIce, int theCost)
         {
             if (theWeather == weatherPref && theCost <= costPref)
             {
