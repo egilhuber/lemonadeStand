@@ -81,6 +81,7 @@ namespace LemonadeStand
                 Console.WriteLine($"You can make {pitcherIce} pitchers of lemonade");
                 cupsToSell = pitcherIce * 10;
                 Console.WriteLine($"You can sell {cupsToSell} cups of lemonade.");
+                //ice is limiting reactant
                 return cupsToSell;
             }
             else if (pitcherIce >= pitcherSugar && pitcherLemons >= pitcherSugar)
@@ -88,6 +89,7 @@ namespace LemonadeStand
                 Console.WriteLine($"You can make {pitcherSugar} pitchers of lemonade");
                 cupsToSell = pitcherSugar * 10;
                 Console.WriteLine($"You can sell {cupsToSell} cups of lemonade.");
+                //sugar is limiting reactant
                 return cupsToSell;
             }
             else if (pitcherIce >= pitcherLemons && pitcherSugar >= pitcherLemons)
@@ -95,6 +97,7 @@ namespace LemonadeStand
                 Console.WriteLine($"You can make {pitcherLemons} pitchers of lemonade");
                 cupsToSell = pitcherLemons * 10;
                 Console.WriteLine($"You can sell {cupsToSell} cups of lemonade.");
+                //lemons are limiting reactant
                 return cupsToSell;
             }
             return x;

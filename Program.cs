@@ -93,293 +93,327 @@ namespace LemonadeStand
                 Console.ReadLine();
                 Console.Clear();
 
-                for (int j = 0; j < 10; j++)
+                do
                 {
-                    //newCustomer
-                    newCustomer.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                    if (newCustomer.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
+                        //newCustomer
+                        newCustomer.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (newCustomer.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
-                        
-                            newCustomer.MakePurchase(player.priceOfLemonade, player.cashBalance);
-                            newCustomer.TakeCup(StockCups.quantity);
-                            newCustomer.TakeSugar(StockSugar.quantity);
-                            newCustomer.TakeLemons(StockLemons.quantity);
-                            newCustomer.TakeIce(StockIceCubes.quantity);
+                            {
 
-                            newDay.CupsSold();
-                            newDay.SugarSold();
-                            newDay.LemonsSold();
-                            newDay.IceSold();
+                                newCustomer.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                newCustomer.TakeCup(StockCups.quantity);
+                                newCustomer.TakeSugar(StockSugar.quantity);
+                                newCustomer.TakeLemons(StockLemons.quantity);
+                                newCustomer.TakeIce(StockIceCubes.quantity);
+
+                                newDay.CupsSold();
+                                newDay.SugarSold();
+                                newDay.LemonsSold();
+                                newDay.IceSold();
+                            }
+                            StockCups.quantity = newCustomer.aCup;
+                            player.cashBalance = newCustomer.aMoney;
+                            StockSugar.quantity = newCustomer.aSugar;
+                            StockLemons.quantity = newCustomer.aLemon;
+                            StockIceCubes.quantity = newCustomer.aIce;
                         }
-                        StockCups.quantity = newCustomer.aCup;
-                        player.cashBalance = newCustomer.aMoney;
-                        StockSugar.quantity = newCustomer.aSugar;
-                        StockLemons.quantity = newCustomer.aLemon;
-                        StockIceCubes.quantity = newCustomer.aIce;
-                    }
-                    
-                    //oldMan
-                    oldMan.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                    if (oldMan.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
-                    {
-                        {
-
-                            oldMan.MakePurchase(player.priceOfLemonade, player.cashBalance);
-                            oldMan.TakeCup(StockCups.quantity);
-                            oldMan.TakeSugar(StockSugar.quantity);
-                            oldMan.TakeLemons(StockLemons.quantity);
-                            oldMan.TakeIce(StockIceCubes.quantity);
-
-                            newDay.CupsSold();
-                            newDay.SugarSold();
-                            newDay.LemonsSold();
-                            newDay.IceSold();
-
-                        }
-                        StockCups.quantity = oldMan.aCup;
-                        player.cashBalance = oldMan.aMoney;
-                        StockSugar.quantity = oldMan.aSugar;
-                        StockLemons.quantity = oldMan.aLemon;
-                        StockIceCubes.quantity = oldMan.aIce;
                     }
 
-
-                    //businessMan
-                    businessMan.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                    if (businessMan.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
+                        //oldMan
+                        oldMan.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (oldMan.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
+                            {
 
-                            businessMan.MakePurchase(player.priceOfLemonade, player.cashBalance);
-                            businessMan.TakeCup(StockCups.quantity);
-                            businessMan.TakeSugar(StockSugar.quantity);
-                            businessMan.TakeLemons(StockLemons.quantity);
-                            businessMan.TakeIce(StockIceCubes.quantity);
+                                oldMan.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                oldMan.TakeCup(StockCups.quantity);
+                                oldMan.TakeSugar(StockSugar.quantity);
+                                oldMan.TakeLemons(StockLemons.quantity);
+                                oldMan.TakeIce(StockIceCubes.quantity);
 
-                            newDay.CupsSold();
-                            newDay.SugarSold();
-                            newDay.LemonsSold();
-                            newDay.IceSold();
+                                newDay.CupsSold();
+                                newDay.SugarSold();
+                                newDay.LemonsSold();
+                                newDay.IceSold();
 
+                            }
+                            StockCups.quantity = oldMan.aCup;
+                            player.cashBalance = oldMan.aMoney;
+                            StockSugar.quantity = oldMan.aSugar;
+                            StockLemons.quantity = oldMan.aLemon;
+                            StockIceCubes.quantity = oldMan.aIce;
                         }
-                        StockCups.quantity = businessMan.aCup;
-                        player.cashBalance = businessMan.aMoney;
-                        StockSugar.quantity = businessMan.aSugar;
-                        StockLemons.quantity = businessMan.aLemon;
-                        StockIceCubes.quantity = businessMan.aIce;
-                    }
+                    } 
 
 
-                    //child
-                    child.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                    if (child.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
+                        //businessMan
+                        businessMan.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (businessMan.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
+                            {
 
-                            child.MakePurchase(player.priceOfLemonade, player.cashBalance);
-                            child.TakeCup(StockCups.quantity);
-                            child.TakeSugar(StockSugar.quantity);
-                            child.TakeLemons(StockLemons.quantity);
-                            child.TakeIce(StockIceCubes.quantity);
+                                businessMan.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                businessMan.TakeCup(StockCups.quantity);
+                                businessMan.TakeSugar(StockSugar.quantity);
+                                businessMan.TakeLemons(StockLemons.quantity);
+                                businessMan.TakeIce(StockIceCubes.quantity);
 
-                            newDay.CupsSold();
-                            newDay.SugarSold();
-                            newDay.LemonsSold();
-                            newDay.IceSold();
+                                newDay.CupsSold();
+                                newDay.SugarSold();
+                                newDay.LemonsSold();
+                                newDay.IceSold();
 
+                            }
+                            StockCups.quantity = businessMan.aCup;
+                            player.cashBalance = businessMan.aMoney;
+                            StockSugar.quantity = businessMan.aSugar;
+                            StockLemons.quantity = businessMan.aLemon;
+                            StockIceCubes.quantity = businessMan.aIce;
                         }
-                        StockCups.quantity = child.aCup;
-                        player.cashBalance = child.aMoney;
-                        StockSugar.quantity = child.aSugar;
-                        StockLemons.quantity = child.aLemon;
-                        StockIceCubes.quantity = child.aIce;
-                    }
+                    } 
 
 
-                    //woman
-                    woman.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                    if (woman.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
+                        //child
+                        child.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (child.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
+                            {
 
-                            woman.MakePurchase(player.priceOfLemonade, player.cashBalance);
-                            woman.TakeCup(StockCups.quantity);
-                            woman.TakeSugar(StockSugar.quantity);
-                            woman.TakeLemons(StockLemons.quantity);
-                            woman.TakeIce(StockIceCubes.quantity);
+                                child.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                child.TakeCup(StockCups.quantity);
+                                child.TakeSugar(StockSugar.quantity);
+                                child.TakeLemons(StockLemons.quantity);
+                                child.TakeIce(StockIceCubes.quantity);
 
-                            newDay.CupsSold();
-                            newDay.SugarSold();
-                            newDay.LemonsSold();
-                            newDay.IceSold();
+                                newDay.CupsSold();
+                                newDay.SugarSold();
+                                newDay.LemonsSold();
+                                newDay.IceSold();
 
+                            }
+                            StockCups.quantity = child.aCup;
+                            player.cashBalance = child.aMoney;
+                            StockSugar.quantity = child.aSugar;
+                            StockLemons.quantity = child.aLemon;
+                            StockIceCubes.quantity = child.aIce;
                         }
-                        StockCups.quantity = woman.aCup;
-                        player.cashBalance = woman.aMoney;
-                        StockSugar.quantity = woman.aSugar;
-                        StockLemons.quantity = woman.aLemon;
-                        StockIceCubes.quantity = woman.aIce;
                     }
 
 
-                    //teenager
-                    teenager.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                    if (teenager.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
+                        //woman
+                        woman.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (woman.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
+                            {
 
-                            teenager.MakePurchase(player.priceOfLemonade, player.cashBalance);
-                            teenager.TakeCup(StockCups.quantity);
-                            teenager.TakeSugar(StockSugar.quantity);
-                            teenager.TakeLemons(StockLemons.quantity);
-                            teenager.TakeIce(StockIceCubes.quantity);
+                                woman.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                woman.TakeCup(StockCups.quantity);
+                                woman.TakeSugar(StockSugar.quantity);
+                                woman.TakeLemons(StockLemons.quantity);
+                                woman.TakeIce(StockIceCubes.quantity);
 
-                            newDay.CupsSold();
-                            newDay.SugarSold();
-                            newDay.LemonsSold();
-                            newDay.IceSold();
+                                newDay.CupsSold();
+                                newDay.SugarSold();
+                                newDay.LemonsSold();
+                                newDay.IceSold();
 
+                            }
+                            StockCups.quantity = woman.aCup;
+                            player.cashBalance = woman.aMoney;
+                            StockSugar.quantity = woman.aSugar;
+                            StockLemons.quantity = woman.aLemon;
+                            StockIceCubes.quantity = woman.aIce;
                         }
-                        StockCups.quantity = teenager.aCup;
-                        player.cashBalance = teenager.aMoney;
-                        StockSugar.quantity = teenager.aSugar;
-                        StockLemons.quantity = teenager.aLemon;
-                        StockIceCubes.quantity = teenager.aIce;
+                    } 
+
+
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
+                    {
+                        //teenager
+                        teenager.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (teenager.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                        {
+                            {
+
+                                teenager.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                teenager.TakeCup(StockCups.quantity);
+                                teenager.TakeSugar(StockSugar.quantity);
+                                teenager.TakeLemons(StockLemons.quantity);
+                                teenager.TakeIce(StockIceCubes.quantity);
+
+                                newDay.CupsSold();
+                                newDay.SugarSold();
+                                newDay.LemonsSold();
+                                newDay.IceSold();
+
+                            }
+                            StockCups.quantity = teenager.aCup;
+                            player.cashBalance = teenager.aMoney;
+                            StockSugar.quantity = teenager.aSugar;
+                            StockLemons.quantity = teenager.aLemon;
+                            StockIceCubes.quantity = teenager.aIce;
+                        }
                     }
 
 
-                    //collegeStudent
-                    collegeStudent.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                    if (collegeStudent.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
+                        //collegeStudent
+                        collegeStudent.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (collegeStudent.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
+                            {
 
-                            collegeStudent.MakePurchase(player.priceOfLemonade, player.cashBalance);
-                            collegeStudent.TakeCup(StockCups.quantity);
-                            collegeStudent.TakeSugar(StockSugar.quantity);
-                            collegeStudent.TakeLemons(StockLemons.quantity);
-                            collegeStudent.TakeIce(StockIceCubes.quantity);
+                                collegeStudent.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                collegeStudent.TakeCup(StockCups.quantity);
+                                collegeStudent.TakeSugar(StockSugar.quantity);
+                                collegeStudent.TakeLemons(StockLemons.quantity);
+                                collegeStudent.TakeIce(StockIceCubes.quantity);
 
-                            newDay.CupsSold();
-                            newDay.SugarSold();
-                            newDay.LemonsSold();
-                            newDay.IceSold();
+                                newDay.CupsSold();
+                                newDay.SugarSold();
+                                newDay.LemonsSold();
+                                newDay.IceSold();
 
+                            }
+                            StockCups.quantity = collegeStudent.aCup;
+                            player.cashBalance = collegeStudent.aMoney;
+                            StockSugar.quantity = collegeStudent.aSugar;
+                            StockLemons.quantity = collegeStudent.aLemon;
+                            StockIceCubes.quantity = collegeStudent.aIce;
                         }
-                        StockCups.quantity = collegeStudent.aCup;
-                        player.cashBalance = collegeStudent.aMoney;
-                        StockSugar.quantity = collegeStudent.aSugar;
-                        StockLemons.quantity = collegeStudent.aLemon;
-                        StockIceCubes.quantity = collegeStudent.aIce;
-                    }
+                    } 
 
 
-                    //argonian
-                    argonian.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                    if (argonian.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
+                        //argonian
+                        argonian.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (argonian.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
+                            {
 
-                            argonian.MakePurchase(player.priceOfLemonade, player.cashBalance);
-                            argonian.TakeCup(StockCups.quantity);
-                            argonian.TakeSugar(StockSugar.quantity);
-                            argonian.TakeLemons(StockLemons.quantity);
-                            argonian.TakeIce(StockIceCubes.quantity);
+                                argonian.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                argonian.TakeCup(StockCups.quantity);
+                                argonian.TakeSugar(StockSugar.quantity);
+                                argonian.TakeLemons(StockLemons.quantity);
+                                argonian.TakeIce(StockIceCubes.quantity);
 
-                            newDay.CupsSold();
-                            newDay.SugarSold();
-                            newDay.LemonsSold();
-                            newDay.IceSold();
+                                newDay.CupsSold();
+                                newDay.SugarSold();
+                                newDay.LemonsSold();
+                                newDay.IceSold();
 
+                            }
+                            StockCups.quantity = argonian.aCup;
+                            player.cashBalance = argonian.aMoney;
+                            StockSugar.quantity = argonian.aSugar;
+                            StockLemons.quantity = argonian.aLemon;
+                            StockIceCubes.quantity = argonian.aIce;
                         }
-                        StockCups.quantity = argonian.aCup;
-                        player.cashBalance = argonian.aMoney;
-                        StockSugar.quantity = argonian.aSugar;
-                        StockLemons.quantity = argonian.aLemon;
-                        StockIceCubes.quantity = argonian.aIce;
-                    }
+                    } 
 
 
-                    //athlete
-                    athlete.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                    if (athlete.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
+                        //athlete
+                        athlete.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (athlete.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
+                            {
 
-                            athlete.MakePurchase(player.priceOfLemonade, player.cashBalance);
-                            athlete.TakeCup(StockCups.quantity);
-                            athlete.TakeSugar(StockSugar.quantity);
-                            athlete.TakeLemons(StockLemons.quantity);
-                            athlete.TakeIce(StockIceCubes.quantity);
+                                athlete.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                athlete.TakeCup(StockCups.quantity);
+                                athlete.TakeSugar(StockSugar.quantity);
+                                athlete.TakeLemons(StockLemons.quantity);
+                                athlete.TakeIce(StockIceCubes.quantity);
 
-                            newDay.CupsSold();
-                            newDay.SugarSold();
-                            newDay.LemonsSold();
-                            newDay.IceSold();
+                                newDay.CupsSold();
+                                newDay.SugarSold();
+                                newDay.LemonsSold();
+                                newDay.IceSold();
 
+                            }
+                            StockCups.quantity = athlete.aCup;
+                            player.cashBalance = athlete.aMoney;
+                            StockSugar.quantity = athlete.aSugar;
+                            StockLemons.quantity = athlete.aLemon;
+                            StockIceCubes.quantity = athlete.aIce;
                         }
-                        StockCups.quantity = athlete.aCup;
-                        player.cashBalance = athlete.aMoney;
-                        StockSugar.quantity = athlete.aSugar;
-                        StockLemons.quantity = athlete.aLemon;
-                        StockIceCubes.quantity = athlete.aIce;
-                    }
+                    } 
 
 
-                    //wizard
-                    wizard.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                    if (wizard.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
+                        //wizard
+                        wizard.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (wizard.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
+                            {
 
-                            wizard.MakePurchase(player.priceOfLemonade, player.cashBalance);
-                            wizard.TakeCup(StockCups.quantity);
-                            wizard.TakeSugar(StockSugar.quantity);
-                            wizard.TakeLemons(StockLemons.quantity);
-                            wizard.TakeIce(StockIceCubes.quantity);
+                                wizard.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                wizard.TakeCup(StockCups.quantity);
+                                wizard.TakeSugar(StockSugar.quantity);
+                                wizard.TakeLemons(StockLemons.quantity);
+                                wizard.TakeIce(StockIceCubes.quantity);
 
-                            newDay.CupsSold();
-                            newDay.SugarSold();
-                            newDay.LemonsSold();
-                            newDay.IceSold();
+                                newDay.CupsSold();
+                                newDay.SugarSold();
+                                newDay.LemonsSold();
+                                newDay.IceSold();
 
+                            }
+                            StockCups.quantity = wizard.aCup;
+                            player.cashBalance = wizard.aMoney;
+                            StockSugar.quantity = wizard.aSugar;
+                            StockLemons.quantity = wizard.aLemon;
+                            StockIceCubes.quantity = wizard.aIce;
                         }
-                        StockCups.quantity = wizard.aCup;
-                        player.cashBalance = wizard.aMoney;
-                        StockSugar.quantity = wizard.aSugar;
-                        StockLemons.quantity = wizard.aLemon;
-                        StockIceCubes.quantity = wizard.aIce;
-                    }
+                    } 
 
 
-                    //mom
-                    mom.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                    if (mom.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
+                        //mom
+                        mom.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (mom.willBuy == true && StockCups.quantity > 0 && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
+                            {
 
-                            mom.MakePurchase(player.priceOfLemonade, player.cashBalance);
-                            mom.TakeCup(StockCups.quantity);
-                            mom.TakeSugar(StockSugar.quantity);
-                            mom.TakeLemons(StockLemons.quantity);
-                            mom.TakeIce(StockIceCubes.quantity);
+                                mom.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                mom.TakeCup(StockCups.quantity);
+                                mom.TakeSugar(StockSugar.quantity);
+                                mom.TakeLemons(StockLemons.quantity);
+                                mom.TakeIce(StockIceCubes.quantity);
 
-                            newDay.CupsSold();
-                            newDay.SugarSold();
-                            newDay.LemonsSold();
-                            newDay.IceSold();
+                                newDay.CupsSold();
+                                newDay.SugarSold();
+                                newDay.LemonsSold();
+                                newDay.IceSold();
 
+                            }
+                            StockCups.quantity = mom.aCup;
+                            player.cashBalance = mom.aMoney;
+                            StockSugar.quantity = mom.aSugar;
+                            StockLemons.quantity = mom.aLemon;
+                            StockIceCubes.quantity = mom.aIce;
                         }
-                        StockCups.quantity = mom.aCup;
-                        player.cashBalance = mom.aMoney;
-                        StockSugar.quantity = mom.aSugar;
-                        StockLemons.quantity = mom.aLemon;
-                        StockIceCubes.quantity = mom.aIce;
-                    }
+                    } 
+
 
                     //last line of customer loop
-                }
+                } while (newDay.cupsSold < (player.cupsToSell -1));
 
                 newDay.TodayProfit(newDay.cupsSold, player.priceOfLemonade);
                 newDay.TheProfitSoFar(player.cashBalance, newTree.givenLoans);
