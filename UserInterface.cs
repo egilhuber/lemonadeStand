@@ -29,7 +29,7 @@ namespace LemonadeStand
             Console.Clear();
         }
 
-        public void DisplayInventory(int itemOne, int itemTwo, int itemThree, int itemFour)
+        public void DisplayInventory(double itemOne, double itemTwo, double itemThree, double itemFour)
         {
             //displays sugar, lemon, etc objects from inventory
             Console.WriteLine($"You have {itemOne} sugar.");
@@ -39,7 +39,7 @@ namespace LemonadeStand
             
         }
         
-        public void DisplayCashBalance(int balance)
+        public void DisplayCashBalance(double balance)
         {
             //displays cash balance variable from player
             Console.WriteLine($"You have {balance} cents.");

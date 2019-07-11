@@ -9,18 +9,21 @@ namespace LemonadeStand
     class Customer
     {
         //member variables
-        public int weatherPref;
-        public int sugarPref;
-        public int lemonPref;
-        public int icePref;
-        public int costPref;
+        public double weatherPref;
+        public double sugarPref;
+        public double lemonPref;
+        public double icePref;
+        public double costPref;
         public bool willBuy;
-        public int x = 1;
-        public int aMoney;
-        public int aCup;
+        public double x = 1;
+        public double aMoney;
+        public double aCup;
+        public double aSugar;
+        public double aLemon;
+        public double aIce;
 
         //ctor
-        public Customer(int weatherPref, int sugarPref, int lemonPref, int icePref, int costPref)
+        public Customer(int weatherPref, double sugarPref, double lemonPref, double icePref, double costPref)
         {
             this.weatherPref = weatherPref;
             this.sugarPref = sugarPref;
@@ -29,7 +32,7 @@ namespace LemonadeStand
             this.costPref = costPref;
         }
         //member methods
-        public bool DecideToBuy(int theWeather, int theSugar, int theLemons, int theIce, int theCost)
+        public bool DecideToBuy(int theWeather, double theSugar, double theLemons, double theIce, int theCost)
         {
             if (theWeather == weatherPref && theCost <= costPref)
             {
@@ -58,7 +61,7 @@ namespace LemonadeStand
             //last line of decide to buy
         }
 
-        public int MakePurchase(int theCost, int cashRegister)//add cup and cost parameters then put the buy/exchange in
+        public double MakePurchase(double theCost, double cashRegister)//add cup and cost parameters then put the buy/exchange in
         {
             if (willBuy == true)
             {
@@ -71,7 +74,7 @@ namespace LemonadeStand
             }
         }
 
-        public int TakeCup(int theCups)
+        public double TakeCup(double theCups)
         {
             if (willBuy == true)
             {
@@ -85,13 +88,69 @@ namespace LemonadeStand
 
         }
 
-        public int BuyCup(int someCups)
+        public double TakeIce(double theIces)
+        {
+            if (willBuy == true)
+            {
+                BuyIce(theIces);
+                return aIce;
+            }
+            else
+            {
+                return x;
+            }
+        }
+
+        public double TakeLemons(double theLemons)
+        {
+            if(willBuy == true)
+            {
+                BuyLemons(theLemons);
+                return aLemon;
+            }
+            else
+            {
+                return x;
+            }
+        }
+
+        public double TakeSugar(double theSugars)
+        {
+            if (willBuy == true)
+            {
+                BuySugar(theSugars);
+                return aSugar;
+            }
+            else
+            {
+                return x;
+            }
+        }
+
+        public double BuyCup(double someCups)
         {
             aCup = someCups - 1;
             return aCup;
         }
 
-        public int ExchangeMoney(int someMoney, int someCost)
+        public double BuyIce(double someIce)
+        {
+            aIce = someIce - 0.1;
+            return aIce;
+        }
+
+        public double BuyLemons(double someLemons)
+        {
+            aLemon = someLemons - 0.1;
+            return aLemon;
+        }
+
+        public double BuySugar(double someSugar)
+        {
+            aSugar = someSugar - 0.1;
+            return aSugar;
+        }
+        public double ExchangeMoney(double someMoney, double someCost)
         {
             aMoney = someMoney + someCost;
             return aMoney;

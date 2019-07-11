@@ -11,8 +11,11 @@ namespace LemonadeStand
         //member variables
         public int cupsSold;
         public int todayProfit;
-        public int theProfitSoFar;
-        public int afterPurchaseBalance;
+        public double theProfitSoFar;
+        public double afterPurchaseBalance;
+        public double sugarSold;
+        public double lemonsSold;
+        public double iceSold;
         //ctor
         public Day()
         {
@@ -25,27 +28,34 @@ namespace LemonadeStand
             return cupsSold;
         }
 
+        public double SugarSold()
+        {
+            sugarSold += 0.1;
+            return sugarSold;
+        }
+
+        public double LemonsSold()
+        {
+            lemonsSold += 0.1;
+            return lemonsSold;
+        }
+
+        public double IceSold()
+        {
+            iceSold += 0.1;
+            return iceSold;
+        }
         public int TodayProfit(int cupsOfLemonade, int priceOfLemonade)
         {
             todayProfit = cupsOfLemonade * priceOfLemonade;
             return todayProfit;
         }
 
-        public int TheProfitSoFar(int endMoney, int loanMoney)
+        public double TheProfitSoFar(double endMoney, double loanMoney)
         {
             theProfitSoFar = endMoney - 2000;
             theProfitSoFar -= loanMoney;
             return theProfitSoFar;
-        }
-
-        public void SetTheCups(int cupOne, int cupTwo)
-        {
-            cupOne = cupTwo;
-        }
-
-        public void SetTheMoney(int moneyOne, int moneyTwo)
-        {
-            moneyOne = moneyTwo;
         }
 
 
