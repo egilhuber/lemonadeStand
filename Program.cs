@@ -45,9 +45,12 @@ namespace LemonadeStand
             Console.WriteLine("---");
             weather.GenerateForecast();
             Console.WriteLine("---");
+            Console.WriteLine("Press enter to continue.");
+            Console.ReadLine();
 
             for (int i = 0; i < 7; i++)
             {
+                Console.Clear();
                 Console.WriteLine("---");
                 Console.WriteLine($"Day {i + 1}. Expect {weather.WordsWeekWeather[i]} weather.");
                 GameInterface.DisplayInventory(StockSugar.quantity, StockLemons.quantity, StockCups.quantity, StockIceCubes.quantity);
@@ -59,7 +62,13 @@ namespace LemonadeStand
                 Console.Clear();
                 newStore.GeneratePrices();
                 newStore.AddToCart(player.cashBalance);
-                newTree.PayBack(newStore.amountToBorrow);
+                if (newStore.amountToBorrow > 0)
+                {
+                    newTree.PayBack(newStore.amountToBorrow);
+                }
+                Console.WriteLine("Press enter to continue.");
+                Console.ReadLine();
+                Console.Clear();
                 Console.WriteLine("---");
                 //
                 player.cashBalance = newStore.newBalance;
@@ -76,9 +85,13 @@ namespace LemonadeStand
                 Console.WriteLine("---");
                 player.CreateRecipe();
                 player.MakeLemonade(StockSugar.quantity, StockLemons.quantity, StockIceCubes.quantity);
+                Console.WriteLine("---");
                 player.SetPriceOfLemonade();
+                Console.WriteLine("---");
                 player.PredictProfit(StockCups.quantity);
+                Console.WriteLine("Begin day?");
                 Console.ReadLine();
+                Console.Clear();
 
                 for (int j = 0; j < 10; j++)
                 {
@@ -377,7 +390,7 @@ namespace LemonadeStand
                 Console.WriteLine($"{newDay.theProfitSoFar} cents profit overall");
 
                 //
-
+                newStore.amountToBorrow = 0;
 
                 Console.ReadLine();
                 //end of main for loop
@@ -389,10 +402,12 @@ namespace LemonadeStand
             if (newDay.theProfitSoFar > 0)
             {
                 Console.WriteLine("Congratulations, you made a profit!");
+                Console.ReadLine();
             }
             else
             {
                 Console.WriteLine("You tried");
+                Console.ReadLine();
             }
 
 
