@@ -10,30 +10,30 @@ namespace LemonadeStand
     {
         //member variables
         public string toTheStore;
-        public double sugarPrice;
-        public double lemonsPrice;
-        public double cupsPrice;
-        public double icePrice;
+        public int sugarPrice;
+        public int lemonsPrice;
+        public int cupsPrice;
+        public int icePrice;
 
-        public double sugarQuant;
-        public double lemonsQuant;
-        public double cupsQuant;
-        public double iceQuant;
+        public int sugarQuant;
+        public int lemonsQuant;
+        public int cupsQuant;
+        public int iceQuant;
 
-        public double sugarTotal;
-        public double lemonsTotal;
-        public double cupsTotal;
-        public double iceTotal;
+        public int sugarTotal;
+        public int lemonsTotal;
+        public int cupsTotal;
+        public int iceTotal;
 
-        public double invalidEntry;
+        public int invalidEntry;
 
-        public double cartTotal;
-        public double newBalance;
-        public double amountToBorrow = 0;
+        public int cartTotal;
+        public int newBalance;
+        public int amountToBorrow = 0;
 
 
 
-        public double x = 1;
+        public int x = 1;
 
         //ctor
         public Store()
@@ -55,7 +55,7 @@ namespace LemonadeStand
             return itemPrice.Next(min, max);
         }
 
-        public double GeneratePrices()
+        public int GeneratePrices()
         {
             SellSugar();
             sugarTotal = sugarPrice * sugarQuant;
@@ -71,18 +71,18 @@ namespace LemonadeStand
             //last line of generateprices method
         }
 
-        public double SellSugar()
+        public int SellSugar()
         {
-            sugarPrice = RandomNumber(10, 30);
+            sugarPrice = RandomNumber(10, 20);
             Console.WriteLine($"Sugar is {sugarPrice} cents per pound.");
             Console.WriteLine("How many cups of sugar would you like to purchase?");
             sugarQuant = Convert.ToInt32(Console.ReadLine());
             return sugarQuant;
         }
 
-        public double SellLemons()
+        public int SellLemons()
         {
-            lemonsPrice = RandomNumber(10, 20);
+            lemonsPrice = RandomNumber(8, 15);
             Console.WriteLine($"You spent {sugarTotal} cents on sugar");
             Console.WriteLine("---");
             Console.WriteLine($"Lemons are {lemonsPrice} cents each.");
@@ -91,7 +91,7 @@ namespace LemonadeStand
             return lemonsQuant;
         }
 
-        public double SellCups()
+        public int SellCups()
         {
             cupsPrice = RandomNumber(1, 15);
             Console.WriteLine($"You spent {lemonsTotal} cents on lemons.");
@@ -102,18 +102,18 @@ namespace LemonadeStand
             return cupsQuant;
         }
 
-        public double SellIce()
+        public int SellIce()
         {
-            icePrice = RandomNumber(1, 35);
+            icePrice = RandomNumber(1, 10);
             Console.WriteLine($"You spent {cupsTotal} cents on cups.");
             Console.WriteLine("---");
-            Console.WriteLine($"Ice is {icePrice} cents per pound.");
-            Console.WriteLine("How many pounds of ice would you like to purchase?");
+            Console.WriteLine($"Ice is {icePrice} cents per cube.");
+            Console.WriteLine("How many ice cubes would you like to purchase?");
             iceQuant = Convert.ToInt32(Console.ReadLine());
             return iceQuant;
         }
 
-        public double AddToCart(double balance)
+        public int AddToCart(int balance)
         {
             invalidEntry = 0;
             string response;
@@ -129,7 +129,7 @@ namespace LemonadeStand
             }
             else if (response == "y" && balance < cartTotal || response == "Y" && balance < cartTotal)
             {
-                Console.WriteLine("Insufficient funds. How much would you like to borrow from the lemon tree?");
+                Console.WriteLine("Insufficient funds! How much would you like to borrow from The Lemon Tree?");
                 BorrowMoney();
                 newBalance = balance + amountToBorrow;
                 Console.WriteLine($"Your new balance before purchase is {newBalance} cents.");
@@ -154,31 +154,31 @@ namespace LemonadeStand
                 
         }
 
-        public double BorrowMoney()
+        public int BorrowMoney()
         {
             amountToBorrow += Convert.ToInt32(Console.ReadLine());
             return amountToBorrow;
         }
 
-        public double EmptySugar()
+        public int EmptySugar()
         {
             sugarQuant = 0;
             return sugarQuant;
         }
 
-        public double EmptyLemons()
+        public int EmptyLemons()
         {
             lemonsQuant = 0;
             return lemonsQuant;
         }
 
-        public double EmptyCups()
+        public int EmptyCups()
         {
             cupsQuant = 0;
             return cupsQuant;
         }
 
-        public double EmptyIce()
+        public int EmptyIce()
         {
             iceQuant = 0;
             return iceQuant;

@@ -46,7 +46,7 @@ namespace LemonadeStand
             Console.WriteLine("surprises since debts are included in your running total. ");
             Console.WriteLine(" ");
             System.Threading.Thread.Sleep(100);
-            Console.WriteLine("Other food stands owners in the area have mentioned that these customers are picky. Their ");
+            Console.WriteLine("Other food stand owners in the area have mentioned that these customers are picky. Their ");
             Console.WriteLine("willingness to spend money depends on factors such as the weather, your recipe, and the price.");
             Console.WriteLine("Luckily, you can check the weather and modify your recipe and price before each business day");
             Console.WriteLine("begins. ");
@@ -56,25 +56,41 @@ namespace LemonadeStand
             Console.WriteLine(" ");
             System.Threading.Thread.Sleep(100);
             Console.WriteLine("You have 7 days. Good luck!");
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine("Press enter to continue.");
 
             Console.ReadLine();
             Console.Clear();
         }
 
-        public void DisplayInventory(double itemOne, double itemTwo, double itemThree, double itemFour)
+        public void DisplayInventory(int  itemOne, int  itemTwo, int  itemThree, int  itemFour)
         {
             //displays sugar, lemon, etc objects from inventory
-            Console.WriteLine($"You have {itemOne} sugar.");
+            Console.WriteLine($"You have {itemOne} cups of sugar.");
             Console.WriteLine($"You have {itemTwo} lemons.");
             Console.WriteLine($"You have {itemThree} cups.");
             Console.WriteLine($"You have {itemFour} ice cubes.");
             
         }
         
-        public void DisplayCashBalance(double balance)
+        public void DisplayCashBalance(int  balance)
         {
             //displays cash balance variable from player
             Console.WriteLine($"You have {balance} cents.");
+        }
+
+        public void DisplayRecipe()
+        {
+
+            Console.WriteLine("Welcome home! You can now create your lemonade recipe. You can choose to \n" +
+            "use the recipe you found online, or you can modify it and make it your own.");
+            Console.WriteLine("---");
+            Console.WriteLine("Recipe you got from Google: ");
+            Console.WriteLine("3 cups of sugar");
+            Console.WriteLine("3 lemons");
+            Console.WriteLine("10 ice cubes");
+            Console.WriteLine("---");
         }
 
         public void DisplayForecast()

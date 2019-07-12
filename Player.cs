@@ -9,25 +9,31 @@ namespace LemonadeStand
     class Player
     {
         //member variables
-        public double cashBalance;
+        public int cashBalance;
 
-        public double cupsSugar;
-        public double manyLemons;
-        public double poundsOfIce;
-        public double lemonadeRecipe;
+        public int cupsSugar;
+        public int manyLemons;
+        public int poundsOfIce;
+        public int lemonadeRecipe;
         public int priceOfLemonade;
 
-        public double pitcherSugar;
-        public double pitcherLemons;
-        public double pitcherIce;
+        public int pitcherSugar;
+        public int pitcherLemons;
+        public int pitcherIce;
+
+        public int manyPitchers;
+
+        public int reduceSugar;
+        public int reduceLemons;
+        public int reduceIce;
 
         public bool ad;
 
-        public double cupsToSell;
+        public int cupsToSell;
 
-        public double potentialProfit;
+        public int potentialProfit;
 
-        public double x = 1;
+        public int x = 1;
         //ctor
         public Player()
         {
@@ -35,22 +41,40 @@ namespace LemonadeStand
         }
         //member methods
 
-        public double CreateRecipe()
+        public int CreateRecipe()
+        {
+            CupsSugar();
+            Console.WriteLine("---");
+            ManyLemons();
+            Console.WriteLine("---");
+            PoundsOfIce();
+            Console.WriteLine("---");
+            lemonadeRecipe = cupsSugar + manyLemons + poundsOfIce;
+            return lemonadeRecipe;
+        }
+
+        public int CupsSugar()
         {
             Console.WriteLine("How many cups of sugar would you like per pitcher?");
             cupsSugar = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Your recipe will have {cupsSugar} cups of sugar per pitcher.");
-            Console.WriteLine("---");
+            return cupsSugar;
+        }
+
+        public int ManyLemons()
+        {
             Console.WriteLine("How many lemons would you like per pitcher?");
             manyLemons = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Your recipe will have {manyLemons} lemons per pitcher.");
-            Console.WriteLine("---");
-            Console.WriteLine("How many pounds of ice would you like per pitcher?");
+            return manyLemons;
+        }
+
+        public int PoundsOfIce()
+        {
+            Console.WriteLine("How many ice cubes would you like per pitcher?");
             poundsOfIce = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"Your recipe will have {poundsOfIce} pounds of ice per pitcher.");
-            Console.WriteLine("---");
-            lemonadeRecipe = cupsSugar + manyLemons + poundsOfIce;
-            return lemonadeRecipe;
+            Console.WriteLine($"Your recipe will have {poundsOfIce} ice cubes per pitcher.");
+            return poundsOfIce;
         }
 
         public int SetPriceOfLemonade()
@@ -61,7 +85,7 @@ namespace LemonadeStand
             return priceOfLemonade;
         }
 
-        public double PredictProfit(double itemOne)
+        public int PredictProfit(int itemOne)
         {
             if (cupsToSell <= itemOne)
             {
@@ -81,7 +105,9 @@ namespace LemonadeStand
                 return potentialProfit;
             }
         }
-        public double MakeLemonade(double itemOne, double itemTwo, double itemThree)
+
+
+        public int MakeLemonade(int itemOne, int itemTwo, int itemThree)
         {
             //calculates how much lemonade there will be for the day based on 
             //quantity of ingredients in inventory and recipe
@@ -116,7 +142,7 @@ namespace LemonadeStand
             return x;
         }
 
-        public double AfterAdBalance()
+        public int AfterAdBalance()
         {
             cashBalance -= 200;
             return cashBalance;
@@ -137,12 +163,22 @@ namespace LemonadeStand
             response = Console.ReadLine();
             if (response == "yes" || response == "Yes" || response == "y" || response == "YES")
             {
-                ad = true;
-                AfterAdBalance();
-                Console.WriteLine("Your ad will be published in the next morning paper.");
-                Console.WriteLine($"Your new balance is {cashBalance} cents.");
-                Console.ReadLine();
-                return ad;
+                if (cashBalance > 199)
+                {
+                    ad = true;
+                    AfterAdBalance();
+                    Console.WriteLine("Your ad will be published in the next morning paper.");
+                    Console.WriteLine($"Your new balance is {cashBalance} cents.");
+                    Console.ReadLine();
+                    return ad;
+                }
+                else
+                {
+                    ad = false;
+                    Console.WriteLine("You do not have the funds to run an ad.");
+                    return ad;
+                }
+
             }
             else
             {
@@ -152,6 +188,55 @@ namespace LemonadeStand
                 return ad;
             }
 
+        }
+
+
+        public int MakePitcher(int itemOne, int itemTwo, int itemThree)
+        {
+            //calculates how much lemonade there will be for the day based on 
+            //quantity of ingredients in inventory and recipe
+            pitcherSugar = itemOne / cupsSugar;
+            pitcherLemons = itemTwo / manyLemons;
+            pitcherIce = itemThree / poundsOfIce;
+
+            if (pitcherSugar >= pitcherIce && pitcherLemons >= pitcherIce)
+            {
+                manyPitchers = pitcherSugar;
+                return manyPitchers;
+            }
+            else if (pitcherIce >= pitcherSugar && pitcherLemons >= pitcherSugar)
+            {
+                manyPitchers = pitcherSugar;
+                return manyPitchers;
+            }
+            else if (pitcherIce >= pitcherLemons && pitcherSugar >= pitcherLemons)
+            {
+                manyPitchers = pitcherLemons;
+                return manyPitchers;
+            }
+            return x;
+        }
+
+
+
+
+
+        public int ReduceSugar()
+        {
+            reduceSugar = cupsSugar * manyPitchers;
+            return reduceSugar;
+        }
+
+        public int ReduceLemons()
+        {
+            reduceLemons = manyLemons * manyPitchers;
+            return reduceLemons;
+        }
+
+        public int ReduceIce()
+        {
+            reduceIce = poundsOfIce * manyPitchers;
+            return reduceIce;
         }
 
         //last line of big block

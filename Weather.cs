@@ -25,7 +25,7 @@ namespace LemonadeStand
         {
             int RandomNumber(int min, int max)
             {
-                System.Threading.Thread.Sleep(500);
+                System.Threading.Thread.Sleep(100);
                 Random weatherOption = new Random();
                 return weatherOption.Next(min, max);
             }

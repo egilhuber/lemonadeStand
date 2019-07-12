@@ -9,7 +9,7 @@ namespace LemonadeStand
     class LemonTree
     {
         //member variables
-        public double givenLoans = 0;
+        public int givenLoans = 0;
 
         //ctor
         public LemonTree()
@@ -18,7 +18,7 @@ namespace LemonadeStand
         }
         //member methods
         
-        public double PayBack(double funds)
+        public int PayBack(int funds)
         {
             givenLoans += funds;
             Console.WriteLine($"You will owe the lemon tree {givenLoans} cents at the end of the game.");
