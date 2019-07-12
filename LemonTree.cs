@@ -21,7 +21,7 @@ namespace LemonadeStand
         public double PayBack(double funds)
         {
             givenLoans += funds;
-            Console.WriteLine($"You will owe the lemon tree {givenLoans} at the end of the game.");
+            Console.WriteLine($"You will owe the lemon tree {givenLoans} cents at the end of the game.");
 
             return givenLoans;
         }

@@ -9,20 +9,22 @@ namespace LemonadeStand
     class Day
     {
         //member variables
-        public int cupsSold;
-        public int todayProfit;
+        public double cupsSold;
+        public double todayProfit;
         public double theProfitSoFar;
         public double afterPurchaseBalance;
         public double sugarSold;
         public double lemonsSold;
         public double iceSold;
+        public double bonus;
+        public double x;
         //ctor
         public Day()
         {
             
         }
         //member methods
-        public int CupsSold()
+        public double CupsSold()
         {
             cupsSold++;
             return cupsSold;
@@ -45,9 +47,9 @@ namespace LemonadeStand
             iceSold += 0.1;
             return iceSold;
         }
-        public int TodayProfit(int cupsOfLemonade, int priceOfLemonade)
+        public double TodayProfit(double cupsOfLemonade, double priceOfLemonade)
         {
-            todayProfit = cupsOfLemonade * priceOfLemonade;
+            todayProfit = cupsOfLemonade * priceOfLemonade + bonus;
             return todayProfit;
         }
 
@@ -58,6 +60,15 @@ namespace LemonadeStand
             return theProfitSoFar;
         }
 
+        public double RunAnAd(double initProfit, bool theresAnAd)
+        {
+            if (theresAnAd == true)
+            {
+                bonus = 0.2 * initProfit;
+                return bonus;
+            }
+            return x;
+        }
 
         //last line of big block
     }

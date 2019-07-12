@@ -24,13 +24,39 @@ namespace LemonadeStand
             //display controls (like ability to use "quit" keyword at any time, "store" between days, etc 
             //have a "press enter to continue" that clears the screen 
 
-            Console.WriteLine("You have decided to open a lemonade stand. You have 2000 cents to start with. \n" +
-                "Use this money to purchase supplies so that you can start your first day off right! Prices at the \n" +
-                "store change daily, so it may be worth it to hold out for a better price. You've heard from other food stands \n" +
-                "that people in this area sure are picky. Things such as the weather, price, and recipe will have an impact on \n" +
-                "whether they make a purchase or not. You will have the opportunity to check the weather and change your recipe \n" +
-                "and prices each day before you open. If you ever need to purchase more supplies than have money, The Lemon Tree \n" +
-                "will lend you money - but you'll have to pay it back! Good luck. You have 7 days.");
+            Console.WriteLine("██████╗ ██╗   ██╗██╗     ███████╗███████╗   ");
+            Console.WriteLine("██╔══██╗██║   ██║██║     ██╔════╝██╔════╝██╗");
+            Console.WriteLine("██████╔╝██║   ██║██║     █████╗  ███████╗╚═╝");
+            Console.WriteLine("██╔══██╗██║   ██║██║     ██╔══╝  ╚════██║██╗");
+            Console.WriteLine("██║  ██║╚██████╔╝███████╗███████╗███████║╚═╝");
+            Console.WriteLine("╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝   ");
+
+            Console.WriteLine("You finally have enough money from investors to fulfill your dreams of opening a lemonade stand. ");
+            Console.WriteLine(" ");
+            System.Threading.Thread.Sleep(100);
+            Console.WriteLine("You have 2000 cents. ");
+            Console.WriteLine(" ");
+            System.Threading.Thread.Sleep(100);
+            Console.WriteLine("Before your first day begins, you will need to head to the store to purchase some supplies. ");
+            Console.WriteLine("Prices at the store change pretty regularly, so keep an eye on them. ");
+            Console.WriteLine(" ");
+            System.Threading.Thread.Sleep(100);
+            Console.WriteLine("If you don't have enough funds to purchase the supplies you need, The Lemon Tree bank can help you out. ");
+            Console.WriteLine("Be careful, though. You will have to pay back any money you borrow. You won't have to worry about any");
+            Console.WriteLine("surprises since debts are included in your running total. ");
+            Console.WriteLine(" ");
+            System.Threading.Thread.Sleep(100);
+            Console.WriteLine("Other food stands owners in the area have mentioned that these customers are picky. Their ");
+            Console.WriteLine("willingness to spend money depends on factors such as the weather, your recipe, and the price.");
+            Console.WriteLine("Luckily, you can check the weather and modify your recipe and price before each business day");
+            Console.WriteLine("begins. ");
+            Console.WriteLine(" ");
+            System.Threading.Thread.Sleep(100);
+            Console.WriteLine("Additionally, you can opt to run an ad in the local paper to increase your sales. ");
+            Console.WriteLine(" ");
+            System.Threading.Thread.Sleep(100);
+            Console.WriteLine("You have 7 days. Good luck!");
+
             Console.ReadLine();
             Console.Clear();
         }

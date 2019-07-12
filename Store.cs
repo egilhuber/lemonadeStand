@@ -25,6 +25,8 @@ namespace LemonadeStand
         public double cupsTotal;
         public double iceTotal;
 
+        public double invalidEntry;
+
         public double cartTotal;
         public double newBalance;
         public double amountToBorrow = 0;
@@ -113,17 +115,19 @@ namespace LemonadeStand
 
         public double AddToCart(double balance)
         {
+            invalidEntry = 0;
             string response;
             Console.WriteLine("---");
-            Console.WriteLine($"You have {balance} cents. Your cart total is: {cartTotal} cents. Complete purchase?");
+            Console.WriteLine($"You have {balance} cents. Your cart total is: {cartTotal} cents. \n" +
+                $"Enter y to confirm purchase. Enter n to cancel.");
             response = Console.ReadLine();
-            if (response == "yes" && balance > cartTotal)
+            if (response == "y" && balance > cartTotal || response == "Y" && balance > cartTotal)
             {
                 newBalance = balance - cartTotal;
                 Console.WriteLine($"Your new balance is {newBalance} cents");
                 return newBalance;
             }
-            else if (response == "yes" && balance < cartTotal)
+            else if (response == "y" && balance < cartTotal || response == "Y" && balance < cartTotal)
             {
                 Console.WriteLine("Insufficient funds. How much would you like to borrow from the lemon tree?");
                 BorrowMoney();
@@ -132,7 +136,7 @@ namespace LemonadeStand
                 newBalance -= cartTotal;
                 return newBalance;
             }
-            else if (response == "no")
+            else if (response == "n" || response == "N")
             {
                 EmptySugar();
                 EmptyLemons();
@@ -144,10 +148,9 @@ namespace LemonadeStand
             }
             else
             {
-                Console.WriteLine("Invalid entry");
-                Console.ReadLine();
+                invalidEntry = 1;
+                return invalidEntry;
             }
-            return x;
                 
         }
 

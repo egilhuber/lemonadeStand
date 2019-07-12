@@ -21,6 +21,8 @@ namespace LemonadeStand
         public double pitcherLemons;
         public double pitcherIce;
 
+        public bool ad;
+
         public double cupsToSell;
 
         public double potentialProfit;
@@ -65,6 +67,8 @@ namespace LemonadeStand
             {
                 potentialProfit = cupsToSell * priceOfLemonade;
                 Console.WriteLine($"Your potential profit for the day is {potentialProfit} cents.");
+                Console.WriteLine("Press enter to continue.");
+                Console.ReadLine();
                 return potentialProfit;
             }
             else
@@ -72,6 +76,8 @@ namespace LemonadeStand
                 potentialProfit = itemOne * priceOfLemonade;
                 Console.WriteLine("You will run out of cups.");
                 Console.WriteLine($"Your potential profit for the day is {potentialProfit} cents.");
+                Console.WriteLine("Press enter to continue.");
+                Console.ReadLine();
                 return potentialProfit;
             }
         }
@@ -110,12 +116,42 @@ namespace LemonadeStand
             return x;
         }
 
-        public void RunAd()
+        public double AfterAdBalance()
+        {
+            cashBalance -= 200;
+            return cashBalance;
+        }
+
+        public bool RunAd()
         {
             //player can spend money to run an ad in the local paper 
             //if the next day is gonna be like rainy or something
             //this can cost like $3 and give a 10% increase in customer reach
             //perhaps bool isAdDay if true +10% profit
+            Console.Clear();
+            string response;
+            Console.WriteLine("You may run an ad in the local paper for 200 cents. \n" +
+                "This will increaese your revenue by 20%. \n" +
+                $"Your current balance is {cashBalance} cents. \n" +
+                $"Would you like to run an ad?");
+            response = Console.ReadLine();
+            if (response == "yes" || response == "Yes" || response == "y" || response == "YES")
+            {
+                ad = true;
+                AfterAdBalance();
+                Console.WriteLine("Your ad will be published in the next morning paper.");
+                Console.WriteLine($"Your new balance is {cashBalance} cents.");
+                Console.ReadLine();
+                return ad;
+            }
+            else
+            {
+                ad = false;
+                Console.WriteLine("No ad will be run.");
+                Console.ReadLine();
+                return ad;
+            }
+
         }
 
         //last line of big block

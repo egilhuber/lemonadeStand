@@ -21,7 +21,7 @@ namespace LemonadeStand
             Weather weather = new Weather();
             Store newStore = new Store();
             LemonTree newTree = new LemonTree();
-
+            Game newGame = new Game();
             Day newDay = new Day();
 
             Customer newCustomer = new Customer(2, 3, 3, 2, 25);
@@ -39,6 +39,7 @@ namespace LemonadeStand
 
 
             //method calls
+            newGame.BeginGame();
             GameInterface.DisplayRules();
             GameInterface.DisplayInventory(StockSugar.quantity, StockLemons.quantity, StockCups.quantity, StockIceCubes.quantity);
             Console.WriteLine("---");
@@ -66,18 +67,15 @@ namespace LemonadeStand
                 Console.WriteLine("---");
                 
                 
-                    try
-                    {
-                        newStore.GeneratePrices();
-                        Console.WriteLine($"You spent {newStore.iceTotal} cents on ice.");
+                try
+                {
+                     newStore.GeneratePrices();
+                     Console.WriteLine($"You spent {newStore.iceTotal} cents on ice.");
                 }
-                    catch
-                    {
-                        //Console.Clear();
-                        //GameInterface.DisplayInventory(StockSugar.quantity, StockLemons.quantity, StockCups.quantity, StockIceCubes.quantity);
-                        Console.WriteLine("Invalid entry.");
-                        //newStore.GeneratePrices();
-                    }
+                catch
+                {
+                     Console.WriteLine("Invalid entry.");
+                }
                 
                 
                 newStore.AddToCart(player.cashBalance);
@@ -90,7 +88,15 @@ namespace LemonadeStand
                 Console.Clear();
                 Console.WriteLine("---");
                 //
-                player.cashBalance = newStore.newBalance;
+                if (newStore.invalidEntry == 0)
+                {
+                    player.cashBalance = newStore.newBalance;
+                }
+                else if (newStore.invalidEntry == 1)
+                {
+                    player.cashBalance -= newStore.cartTotal;
+                }
+                
                 newDay.afterPurchaseBalance = newStore.newBalance;
                 //Console.Clear();
                 Console.WriteLine($"After making your purchase, you have {player.cashBalance} cents.");
@@ -110,15 +116,15 @@ namespace LemonadeStand
                     player.SetPriceOfLemonade();
                     Console.WriteLine("---");
                     player.PredictProfit(StockCups.quantity);
-                    Console.WriteLine("Begin day?");
-                    Console.ReadLine();
-                    Console.Clear();
+                    player.RunAd();
+
                 }
                 catch
                 {
                     Console.WriteLine("Invalid entry.");
                 }
 
+                newGame.StartDay();
 
                 do
                 {
@@ -443,10 +449,13 @@ namespace LemonadeStand
                 } while (newDay.cupsSold < (player.cupsToSell -1));
 
                 newDay.TodayProfit(newDay.cupsSold, player.priceOfLemonade);
+                newDay.RunAnAd(newDay.todayProfit, player.ad);
+                newDay.TodayProfit(newDay.cupsSold, player.priceOfLemonade);
                 newDay.TheProfitSoFar(player.cashBalance, newTree.givenLoans);
 
 
                 //the day is now over time for end of day stats
+                Console.Clear();
                 Console.WriteLine("End of day stats: ");
                 Console.WriteLine($"{newDay.cupsSold} cups of lemonade sold");
                 Console.WriteLine($"{newDay.todayProfit} cents profit made today");
