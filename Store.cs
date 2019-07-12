@@ -114,7 +114,6 @@ namespace LemonadeStand
         public double AddToCart(double balance)
         {
             string response;
-            Console.WriteLine($"You spent {iceTotal} cents on ice.");
             Console.WriteLine("---");
             Console.WriteLine($"You have {balance} cents. Your cart total is: {cartTotal} cents. Complete purchase?");
             response = Console.ReadLine();
@@ -145,7 +144,7 @@ namespace LemonadeStand
             }
             else
             {
-                Console.WriteLine("invalid entry");
+                Console.WriteLine("Invalid entry");
                 Console.ReadLine();
             }
             return x;

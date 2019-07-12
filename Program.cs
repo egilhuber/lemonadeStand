@@ -10,6 +10,7 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
+
             //instantiations
             UserInterface GameInterface = new UserInterface();
             Inventory StockSugar = new Inventory();
@@ -61,7 +62,24 @@ namespace LemonadeStand
                 Console.WriteLine("---");
                 //
                 Console.Clear();
-                newStore.GeneratePrices();
+                GameInterface.DisplayInventory(StockSugar.quantity, StockLemons.quantity, StockCups.quantity, StockIceCubes.quantity);
+                Console.WriteLine("---");
+                
+                
+                    try
+                    {
+                        newStore.GeneratePrices();
+                        Console.WriteLine($"You spent {newStore.iceTotal} cents on ice.");
+                }
+                    catch
+                    {
+                        //Console.Clear();
+                        //GameInterface.DisplayInventory(StockSugar.quantity, StockLemons.quantity, StockCups.quantity, StockIceCubes.quantity);
+                        Console.WriteLine("Invalid entry.");
+                        //newStore.GeneratePrices();
+                    }
+                
+                
                 newStore.AddToCart(player.cashBalance);
                 if (newStore.amountToBorrow > 0)
                 {
@@ -84,15 +102,23 @@ namespace LemonadeStand
                 }
                 GameInterface.DisplayInventory(StockSugar.quantity, StockLemons.quantity, StockCups.quantity, StockIceCubes.quantity);
                 Console.WriteLine("---");
-                player.CreateRecipe();
-                player.MakeLemonade(StockSugar.quantity, StockLemons.quantity, StockIceCubes.quantity);
-                Console.WriteLine("---");
-                player.SetPriceOfLemonade();
-                Console.WriteLine("---");
-                player.PredictProfit(StockCups.quantity);
-                Console.WriteLine("Begin day?");
-                Console.ReadLine();
-                Console.Clear();
+                try
+                {
+                    player.CreateRecipe();
+                    player.MakeLemonade(StockSugar.quantity, StockLemons.quantity, StockIceCubes.quantity);
+                    Console.WriteLine("---");
+                    player.SetPriceOfLemonade();
+                    Console.WriteLine("---");
+                    player.PredictProfit(StockCups.quantity);
+                    Console.WriteLine("Begin day?");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+                catch
+                {
+                    Console.WriteLine("Invalid entry.");
+                }
+
 
                 do
                 {
@@ -418,17 +444,18 @@ namespace LemonadeStand
 
                 newDay.TodayProfit(newDay.cupsSold, player.priceOfLemonade);
                 newDay.TheProfitSoFar(player.cashBalance, newTree.givenLoans);
+
+
                 //the day is now over time for end of day stats
                 Console.WriteLine("End of day stats: ");
                 Console.WriteLine($"{newDay.cupsSold} cups of lemonade sold");
                 Console.WriteLine($"{newDay.todayProfit} cents profit made today");
                 Console.WriteLine($"{newDay.theProfitSoFar} cents profit overall");
 
-                //
                 newStore.amountToBorrow = 0;
 
                 Console.ReadLine();
-                //end of main for loop
+                //end of loop
             }
 
             newDay.TheProfitSoFar(player.cashBalance, newTree.givenLoans);
@@ -445,7 +472,7 @@ namespace LemonadeStand
                 Console.ReadLine();
             }
 
-
+            //last line of static main
         }
     }
 }

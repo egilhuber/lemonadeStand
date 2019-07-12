@@ -40,7 +40,7 @@ namespace LemonadeStand
                 willBuy = true;
                 return willBuy;
             }
-            else if (theSugar == sugarPref || theLemons == lemonPref)
+            else if (theSugar == sugarPref || theLemons == lemonPref && theWeather == weatherPref)
             {
                 //true
                 willBuy = true;
