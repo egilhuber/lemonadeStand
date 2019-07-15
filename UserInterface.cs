@@ -8,8 +8,11 @@ namespace LemonadeStand
 {
     class UserInterface
     {
-        
+
         //member variables
+
+        public bool skip;
+        public string userResponse;
 
         //ctor
         public UserInterface()
@@ -19,6 +22,27 @@ namespace LemonadeStand
         
         //member methods
 
+        public bool SkipLoad()
+        {
+            Console.WriteLine("Would you like to skip loading screens for faster gameplay?");
+            userResponse = Console.ReadLine();
+            if (userResponse == "yes" || userResponse == "Yes" || userResponse == "YES" || userResponse == "y")
+            {
+                skip = true;
+                Console.WriteLine("Loading screens will be skipped. Press enter to continue.");
+                Console.ReadLine();
+                Console.Clear();
+                return skip;
+            }
+            else
+            {
+                skip = false;
+                Console.WriteLine("Loading screens will play. Press enter to continue.");
+                Console.ReadLine();
+                Console.Clear();
+                return skip;
+            }
+        }
         public void DisplayRules()
         {
 
@@ -66,7 +90,7 @@ namespace LemonadeStand
             Console.Clear();
         }
 
-        public void DisplayInventory(int  itemOne, int  itemTwo, int  itemThree, int  itemFour)
+        public void DisplayInventory(double  itemOne, double itemTwo, double itemThree, double itemFour)
         {
             //displays sugar, lemon, etc objects from inventory
             Console.WriteLine($"You have {itemOne} cups of sugar.");

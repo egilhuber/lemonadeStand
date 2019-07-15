@@ -74,7 +74,7 @@ namespace LemonadeStand
 
         public int SellSugar()
         {
-            sugarPrice = RandomNumber(1, 10);
+            sugarPrice = RandomNumber(5, 10);
             Console.WriteLine($"Sugar is {sugarPrice} cents per cup.");
             Console.WriteLine("How many cups of sugar would you like to purchase?");
             sugarQuant = Convert.ToInt32(Console.ReadLine());
@@ -83,7 +83,7 @@ namespace LemonadeStand
 
         public int SellLemons()
         {
-            lemonsPrice = RandomNumber(1, 10);
+            lemonsPrice = RandomNumber(5, 10);
             Console.WriteLine($"You spent {sugarTotal} cents on sugar");
             Console.WriteLine("---");
             Console.WriteLine($"Lemons are {lemonsPrice} cents each.");

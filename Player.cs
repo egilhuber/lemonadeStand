@@ -12,27 +12,27 @@ namespace LemonadeStand
         //member variables
         public int cashBalance;
 
-        public int cupsSugar;
-        public int manyLemons;
-        public int poundsOfIce;
-        public int lemonadeRecipe;
+        public double cupsSugar;
+        public double manyLemons;
+        public double poundsOfIce;
+        public double lemonadeRecipe;
         public int priceOfLemonade;
 
-        public int pitcherSugar;
-        public int pitcherLemons;
-        public int pitcherIce;
+        public double pitcherSugar;
+        public double pitcherLemons;
+        public double pitcherIce;
 
-        public int manyPitchers;
+        public double manyPitchers;
 
-        public int reduceSugar;
-        public int reduceLemons;
-        public int reduceIce;
+        public double reduceSugar;
+        public double reduceLemons;
+        public double reduceIce;
 
         public bool ad;
 
-        public int cupsToSell;
+        public double cupsToSell;
 
-        public int potentialProfit;
+        public double potentialProfit;
 
         public int x = 1;
 
@@ -44,7 +44,7 @@ namespace LemonadeStand
         }
         //member methods
 
-        public int CreateRecipe()
+        public double CreateRecipe()
         {
             CupsSugar();
             Console.WriteLine("---");
@@ -56,7 +56,7 @@ namespace LemonadeStand
             return lemonadeRecipe;
         }
 
-        public int CupsSugar()
+        public double CupsSugar()
         {
             Console.WriteLine("How many cups of sugar would you like per pitcher?");
             cupsSugar = Convert.ToInt32(Console.ReadLine());
@@ -64,7 +64,7 @@ namespace LemonadeStand
             return cupsSugar;
         }
 
-        public int ManyLemons()
+        public double ManyLemons()
         {
             Console.WriteLine("How many lemons would you like per pitcher?");
             manyLemons = Convert.ToInt32(Console.ReadLine());
@@ -72,7 +72,7 @@ namespace LemonadeStand
             return manyLemons;
         }
 
-        public int PoundsOfIce()
+        public double PoundsOfIce()
         {
             Console.WriteLine("How many ice cubes would you like per pitcher?");
             poundsOfIce = Convert.ToInt32(Console.ReadLine());
@@ -88,7 +88,7 @@ namespace LemonadeStand
             return priceOfLemonade;
         }
 
-        public int PredictProfit(int itemOne)
+        public double PredictProfit(double itemOne)
         {
             if (cupsToSell <= itemOne)
             {
@@ -110,7 +110,7 @@ namespace LemonadeStand
         }
 
 
-        public int MakeLemonade(int itemOne, int itemTwo, int itemThree)
+        public double MakeLemonade(double itemOne, double itemTwo, double itemThree)
         {
             //calculates how much lemonade there will be for the day based on 
             //quantity of ingredients in inventory and recipe
@@ -194,7 +194,7 @@ namespace LemonadeStand
         }
 
 
-        public int MakePitcher(int itemOne, int itemTwo, int itemThree)
+        public double MakePitcher(double itemOne, double itemTwo, double itemThree)
         {
             //calculates how much lemonade there will be for the day based on 
             //quantity of ingredients in inventory and recipe
@@ -224,21 +224,21 @@ namespace LemonadeStand
 
 
 
-        public int ReduceSugar()
+        public double ReduceSugar()
         {
-            reduceSugar = cupsSugar * manyPitchers;
+            reduceSugar = cupsSugar / 10;
             return reduceSugar;
         }
 
-        public int ReduceLemons()
+        public double ReduceLemons()
         {
-            reduceLemons = manyLemons * manyPitchers;
+            reduceLemons = manyLemons / 10;
             return reduceLemons;
         }
 
-        public int ReduceIce()
+        public double ReduceIce()
         {
-            reduceIce = poundsOfIce * manyPitchers;
+            reduceIce = poundsOfIce / 10;
             return reduceIce;
         }
 

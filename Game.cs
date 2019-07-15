@@ -83,114 +83,129 @@ namespace LemonadeStand
         }
 
 
-        public void StartDay()
+        public void StartDay(bool noLoad)
         {
             Console.Clear();
             Console.WriteLine("Ready for business!");
             Console.WriteLine("Press enter to begin day.");
             Console.ReadLine();
             Console.Clear();
-            
-            for (int i = 0; i < 5; i++)
+            if (noLoad == true)
             {
-                Console.WriteLine(".");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("..");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("...");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
+                for (int i = 0; i < 5; i++)
+                {
+                    Console.WriteLine(".");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("..");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("...");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                }
             }
+            else if (noLoad == false)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    Console.WriteLine(".");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("..");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("...");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                }
                 newInterface.Lemons();
-            for (int i = 0; i < 3; i++)
-            {
-                Console.WriteLine("Squeezing lemons.");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Squeezing lemons..");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Squeezing lemons...");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.WriteLine("Squeezing lemons.");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Squeezing lemons..");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Squeezing lemons...");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                }
+                for (int i = 0; i < 2; i++)
+                {
+                    Console.WriteLine("Spilling sugar.");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Spilling sugar..");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Spilling sugar...");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                }
+                for (int i = 0; i < 2; i++)
+                {
+                    Console.WriteLine("Crushing ice.");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Crushing ice..");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Crushing ice...");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.WriteLine("Giving out samples.");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Giving out samples..");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Giving out samples...");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.WriteLine("Taking inventory.");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Taking inventory..");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Taking inventory...");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                }
+                for (int i = 0; i < 2; i++)
+                {
+                    Console.WriteLine("Counting money.");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Counting money..");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Counting money...");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.WriteLine("Closing up shop.");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Closing up shop..");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    Console.WriteLine("Closing up shop...");
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                }
             }
-            for (int i = 0; i < 2; i++)
-            {
-                Console.WriteLine("Spilling sugar.");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Spilling sugar..");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Spilling sugar...");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-            }
-            for (int i = 0; i < 2; i++)
-            {
-                Console.WriteLine("Crushing ice.");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Crushing ice..");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Crushing ice...");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-            }
-            for (int i = 0; i < 3; i++)
-            {
-                Console.WriteLine("Giving out samples.");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Giving out samples..");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Giving out samples...");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-            }
-            for (int i = 0; i < 3; i++)
-            {
-                Console.WriteLine("Taking inventory.");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Taking inventory..");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Taking inventory...");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-            }
-            for (int i = 0; i < 2; i++)
-            {
-                Console.WriteLine("Counting money.");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Counting money..");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Counting money...");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-            }
-            for (int i = 0; i < 3; i++)
-            {
-                Console.WriteLine("Closing up shop.");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Closing up shop..");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-                Console.WriteLine("Closing up shop...");
-                System.Threading.Thread.Sleep(100);
-                Console.Clear();
-            }
-
-
-
+            
         }
 
         //last line of big block

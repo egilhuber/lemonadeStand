@@ -9,7 +9,7 @@ namespace LemonadeStand
     class Inventory
     {
         //member variables
-        public int quantity;
+        public double quantity;
         //ctor
         public Inventory()
         {

@@ -17,9 +17,9 @@ namespace LemonadeStand
         public int icePref;
         public int costPref;
         public bool willBuy;
-        public int x = 1;
+        public int x;
         public int aMoney;
-        public int aCup;
+        public double aCup;
 
         //ctor
         public Customer(int weatherPref, int sugarPref, int lemonPref, int icePref, int costPref)
@@ -31,7 +31,7 @@ namespace LemonadeStand
             this.costPref = costPref;
         }
         //member methods
-        public bool DecideToBuy(int theWeather, int theSugar, int theLemons, int theIce, int theCost)
+        public bool DecideToBuy(int theWeather, double theSugar, double theLemons, double theIce, double theCost)
         {
             if (theWeather != weatherPref)
             {
@@ -70,11 +70,11 @@ namespace LemonadeStand
             }
             else
             {
-                return x;
+                return x = 1;
             }
         }
 
-        public int TakeCup(int theCups)
+        public double TakeCup(double theCups)
         {
             if (willBuy == true)
             {
@@ -83,14 +83,14 @@ namespace LemonadeStand
             }
             else
             {
-                return x;
+                return x = 1;
             }
 
         }
 
 
 
-        public int BuyCup(int someCups)
+        public double BuyCup(double someCups)
         {
             aCup = someCups - 1;
             return aCup;
