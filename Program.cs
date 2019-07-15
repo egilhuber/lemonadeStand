@@ -8,6 +8,11 @@ namespace LemonadeStand
 {
     class Program
     {
+        //Runtimes: 
+            // 7 minutes with load screens and immersed gameplay
+            // < 3 minutes w/o load screens w/speed run
+
+
         static void Main(string[] args)
         {
 
@@ -711,6 +716,7 @@ namespace LemonadeStand
             }
 
             newDay.TheProfitSoFar(player.cashBalance, newTree.givenLoans);
+            Console.Clear();
             Console.WriteLine("End of game");
             Console.WriteLine($"{newDay.theProfitSoFar} cents profit overall");
             if (newDay.theProfitSoFar > 0)

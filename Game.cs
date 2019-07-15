@@ -8,8 +8,7 @@ namespace LemonadeStand
 {
     class Game
     {
-
-        UserInterface newInterface = new UserInterface();
+        readonly UserInterface newInterface = new UserInterface();
         //member variables
 
         //ctor
@@ -92,7 +91,7 @@ namespace LemonadeStand
             Console.Clear();
             if (noLoad == true)
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     Console.WriteLine(".");
                     System.Threading.Thread.Sleep(100);

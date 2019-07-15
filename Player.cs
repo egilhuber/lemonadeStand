@@ -147,7 +147,7 @@ namespace LemonadeStand
 
         public int AfterAdBalance()
         {
-            cashBalance -= 200;
+            cashBalance -= 50;
             return cashBalance;
         }
 
@@ -159,14 +159,14 @@ namespace LemonadeStand
             //perhaps bool isAdDay if true +10% profit
             Console.Clear();
             string response;
-            Console.WriteLine("You may run an ad in the local paper for 200 cents. \n" +
+            Console.WriteLine("You may run an ad in the local paper for 50 cents. \n" +
                 "This will increaese your revenue by 20%. \n" +
                 $"Your current balance is {cashBalance} cents. \n" +
                 $"Would you like to run an ad?");
             response = Console.ReadLine();
             if (response == "yes" || response == "Yes" || response == "y" || response == "YES")
             {
-                if (cashBalance > 199)
+                if (cashBalance > 49)
                 {
                     ad = true;
                     AfterAdBalance();
@@ -179,6 +179,7 @@ namespace LemonadeStand
                 {
                     ad = false;
                     Console.WriteLine("You do not have the funds to run an ad.");
+                    System.Threading.Thread.Sleep(1400);
                     return ad;
                 }
 
