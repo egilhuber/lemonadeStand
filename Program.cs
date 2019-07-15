@@ -24,8 +24,6 @@ namespace LemonadeStand
             Game newGame = new Game();
             Day newDay = new Day();
 
-            //TODO: make more customers and customer purchase blocks
-
             Customer newCustomer = new Customer(2, 3, 3, 10, 25);
 
             Customer oldMan = new Customer(1, 2, 4, 10, 10);
@@ -39,9 +37,19 @@ namespace LemonadeStand
             Customer wizard = new Customer(3, 4, 4, 20, 300);
             Customer mom = new Customer(0, 2, 2, 20, 500);
 
+            Customer ironMan = new Customer(0, 5, 5, 25, 1000);
+            Customer captainAmerica= new Customer(1, 2, 3, 10, 50);
+            Customer thor = new Customer(2, 3, 3, 10, 15);
+            Customer hulk = new Customer(1, 3, 3, 10, 75);
+            Customer wonderWoman = new Customer(3, 2, 1, 30, 25);
+            Customer batman = new Customer(4, 2, 4, 40, 300);
+            Customer deadpool = new Customer(0, 2, 3, 20, 50);
+            Customer spiderman = new Customer(1, 3, 3, 10, 200);
+
+
 
             //method calls
-            Console.ReadLine();
+            Console.ReadLine(); //remove this line before submitting
             newGame.BeginGame();
             GameInterface.DisplayRules();
             GameInterface.DisplayInventory(StockSugar.quantity, StockLemons.quantity, StockCups.quantity, StockIceCubes.quantity);
@@ -59,6 +67,7 @@ namespace LemonadeStand
                 player.cupsSugar = 0;
                 player.manyLemons = 0;
                 player.poundsOfIce = 0;
+                newDay.bonus = 0;
                 Console.Clear();
                 Console.WriteLine("---");
                 Console.WriteLine($"Day {i + 1}. Expect {weather.WordsWeekWeather[i]} weather.");
@@ -140,11 +149,11 @@ namespace LemonadeStand
 
                 for (int q = 0; q < 5; q++)
                 {
+                    //newCustomer
                     if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
-                        //newCustomer
                         newCustomer.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                        if (newCustomer.willBuy == true)
+                        if (newCustomer.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
                             {
 
@@ -152,17 +161,18 @@ namespace LemonadeStand
                                 newCustomer.TakeCup(StockCups.quantity);
 
                                 newDay.CupsSold();
+                                StockCups.quantity = newCustomer.aCup;
+                                player.cashBalance = newCustomer.aMoney;
                             }
-                            StockCups.quantity = newCustomer.aCup;
-                            player.cashBalance = newCustomer.aMoney;
+
                         }
                     }
 
+                    //oldMan
                     if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
-                        //oldMan
                         oldMan.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                        if (oldMan.willBuy == true)
+                        if (oldMan.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
                             {
 
@@ -170,19 +180,18 @@ namespace LemonadeStand
                                 oldMan.TakeCup(StockCups.quantity);
 
                                 newDay.CupsSold();
-
+                                StockCups.quantity = oldMan.aCup;
+                                player.cashBalance = oldMan.aMoney;
                             }
-                            StockCups.quantity = oldMan.aCup;
-                            player.cashBalance = oldMan.aMoney;
+
                         }
                     } 
 
-
+                    //businessMan
                     if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
-                        //businessMan
                         businessMan.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                        if (businessMan.willBuy == true)
+                        if (businessMan.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
                             {
 
@@ -190,19 +199,18 @@ namespace LemonadeStand
                                 businessMan.TakeCup(StockCups.quantity);
 
                                 newDay.CupsSold();
-
+                                StockCups.quantity = businessMan.aCup;
+                                player.cashBalance = businessMan.aMoney;
                             }
-                            StockCups.quantity = businessMan.aCup;
-                            player.cashBalance = businessMan.aMoney;
+
                         }
                     } 
 
-
+                    //child
                     if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
-                        //child
                         child.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                        if (child.willBuy == true)
+                        if (child.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
                             {
 
@@ -210,19 +218,18 @@ namespace LemonadeStand
                                 child.TakeCup(StockCups.quantity);
 
                                 newDay.CupsSold();
-
+                                StockCups.quantity = child.aCup;
+                                player.cashBalance = child.aMoney;
                             }
-                            StockCups.quantity = child.aCup;
-                            player.cashBalance = child.aMoney;
+
                         }
                     }
 
-
+                    //woman
                     if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
-                        //woman
                         woman.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                        if (woman.willBuy == true)
+                        if (woman.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
                             {
 
@@ -230,19 +237,18 @@ namespace LemonadeStand
                                 woman.TakeCup(StockCups.quantity);
 
                                 newDay.CupsSold();
-
+                                StockCups.quantity = woman.aCup;
+                                player.cashBalance = woman.aMoney;
                             }
-                            StockCups.quantity = woman.aCup;
-                            player.cashBalance = woman.aMoney;
+
                         }
                     } 
 
-
+                    //teenager
                     if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
-                        //teenager
                         teenager.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                        if (teenager.willBuy == true)
+                        if (teenager.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
                             {
 
@@ -250,19 +256,18 @@ namespace LemonadeStand
                                 teenager.TakeCup(StockCups.quantity);
 
                                 newDay.CupsSold();
-
+                                StockCups.quantity = teenager.aCup;
+                                player.cashBalance = teenager.aMoney;
                             }
-                            StockCups.quantity = teenager.aCup;
-                            player.cashBalance = teenager.aMoney;
+
                         }
                     }
 
-
+                    //collegeStudent
                     if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
-                        //collegeStudent
                         collegeStudent.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                        if (collegeStudent.willBuy == true)
+                        if (collegeStudent.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
                             {
 
@@ -270,19 +275,18 @@ namespace LemonadeStand
                                 collegeStudent.TakeCup(StockCups.quantity);
 
                                 newDay.CupsSold();
-
+                                StockCups.quantity = collegeStudent.aCup;
+                                player.cashBalance = collegeStudent.aMoney;
                             }
-                            StockCups.quantity = collegeStudent.aCup;
-                            player.cashBalance = collegeStudent.aMoney;
+
                         }
                     } 
 
-
+                    //argonian
                     if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
-                        //argonian
                         argonian.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                        if (argonian.willBuy == true)
+                        if (argonian.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
                             {
 
@@ -290,19 +294,18 @@ namespace LemonadeStand
                                 argonian.TakeCup(StockCups.quantity);
 
                                 newDay.CupsSold();
-
+                                StockCups.quantity = argonian.aCup;
+                                player.cashBalance = argonian.aMoney;
                             }
-                            StockCups.quantity = argonian.aCup;
-                            player.cashBalance = argonian.aMoney;
+
                         }
                     } 
 
-
+                    //athlete
                     if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
-                        //athlete
                         athlete.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                        if (athlete.willBuy == true)
+                        if (athlete.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
                             {
 
@@ -310,19 +313,18 @@ namespace LemonadeStand
                                 athlete.TakeCup(StockCups.quantity);
 
                                 newDay.CupsSold();
-
+                                StockCups.quantity = athlete.aCup;
+                                player.cashBalance = athlete.aMoney;
                             }
-                            StockCups.quantity = athlete.aCup;
-                            player.cashBalance = athlete.aMoney;
+
                         }
                     } 
 
-
+                    //wizard
                     if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
-                        //wizard
                         wizard.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                        if (wizard.willBuy == true)
+                        if (wizard.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
                             {
 
@@ -330,19 +332,18 @@ namespace LemonadeStand
                                 wizard.TakeCup(StockCups.quantity);
 
                                 newDay.CupsSold();
-
+                                StockCups.quantity = wizard.aCup;
+                                player.cashBalance = wizard.aMoney;
                             }
-                            StockCups.quantity = wizard.aCup;
-                            player.cashBalance = wizard.aMoney;
+
                         }
                     } 
 
-
+                    //mom
                     if (newDay.cupsSold < (player.cupsToSell - 1))
                     {
-                        //mom
                         mom.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
-                        if (mom.willBuy == true)
+                        if (mom.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
                         {
                             {
 
@@ -350,12 +351,164 @@ namespace LemonadeStand
                                 mom.TakeCup(StockCups.quantity);
 
                                 newDay.CupsSold();
-
+                                StockCups.quantity = mom.aCup;
+                                player.cashBalance = mom.aMoney;
                             }
-                            StockCups.quantity = mom.aCup;
-                            player.cashBalance = mom.aMoney;
+
                         }
-                    } 
+                    }
+
+                    //ironMan
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
+                    {
+                        ironMan.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (ironMan.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                        {
+                            {
+
+                                ironMan.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                ironMan.TakeCup(StockCups.quantity);
+
+                                newDay.CupsSold();
+                                StockCups.quantity = ironMan.aCup;
+                                player.cashBalance = ironMan.aMoney;
+                            }
+
+                        }
+                    }
+
+                    //captainAmerica
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
+                    {
+                        captainAmerica.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (captainAmerica.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                        {
+                            {
+
+                                captainAmerica.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                captainAmerica.TakeCup(StockCups.quantity);
+
+                                newDay.CupsSold();
+                                StockCups.quantity = captainAmerica.aCup;
+                                player.cashBalance = captainAmerica.aMoney;
+                            }
+
+                        }
+                    }
+
+                    //thor
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
+                    {
+                        thor.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (thor.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                        {
+                            {
+
+                                thor.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                thor.TakeCup(StockCups.quantity);
+
+                                newDay.CupsSold();
+                                StockCups.quantity = thor.aCup;
+                                player.cashBalance = thor.aMoney;
+                            }
+
+                        }
+                    }
+
+                    //hulk
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
+                    {
+                        hulk.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (hulk.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                        {
+                            {
+
+                                hulk.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                hulk.TakeCup(StockCups.quantity);
+
+                                newDay.CupsSold();
+                                StockCups.quantity = hulk.aCup;
+                                player.cashBalance = hulk.aMoney;
+                            }
+
+                        }
+                    }
+
+                    //wonderWoman
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
+                    {
+                        wonderWoman.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (wonderWoman.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                        {
+                            {
+
+                                wonderWoman.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                wonderWoman.TakeCup(StockCups.quantity);
+
+                                newDay.CupsSold();
+                                StockCups.quantity = wonderWoman.aCup;
+                                player.cashBalance = wonderWoman.aMoney;
+                            }
+
+                        }
+                    }
+
+                    //batman
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
+                    {
+                        batman.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (batman.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                        {
+                            {
+
+                                batman.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                batman.TakeCup(StockCups.quantity);
+
+                                newDay.CupsSold();
+                                StockCups.quantity = batman.aCup;
+                                player.cashBalance = batman.aMoney;
+                            }
+
+                        }
+                    }
+
+                    //deadpool
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
+                    {
+                        deadpool.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (deadpool.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                        {
+                            {
+
+                                deadpool.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                deadpool.TakeCup(StockCups.quantity);
+
+                                newDay.CupsSold();
+                                StockCups.quantity = deadpool.aCup;
+                                player.cashBalance = deadpool.aMoney;
+                            }
+
+                        }
+                    }
+
+                    //spiderman
+                    if (newDay.cupsSold < (player.cupsToSell - 1))
+                    {
+                        spiderman.DecideToBuy(weather.WeekWeather[i], player.cupsSugar, player.pitcherLemons, player.pitcherIce, player.priceOfLemonade);
+                        if (spiderman.willBuy == true && StockSugar.quantity > 0 && StockLemons.quantity > 0 && StockIceCubes.quantity > 0)
+                        {
+                            {
+
+                                spiderman.MakePurchase(player.priceOfLemonade, player.cashBalance);
+                                spiderman.TakeCup(StockCups.quantity);
+
+                                newDay.CupsSold();
+                                StockCups.quantity = spiderman.aCup;
+                                player.cashBalance = spiderman.aMoney;
+                            }
+
+                        }
+                    }
 
 
                     //last line of customer loop
