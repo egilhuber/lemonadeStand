@@ -49,8 +49,10 @@ namespace LemonadeStand
 
 
             //method calls
-            Console.ReadLine(); //remove this line before submitting
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             newGame.BeginGame();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
             GameInterface.DisplayRules();
             GameInterface.DisplayInventory(StockSugar.quantity, StockLemons.quantity, StockCups.quantity, StockIceCubes.quantity);
             Console.WriteLine("---");

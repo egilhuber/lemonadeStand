@@ -20,17 +20,18 @@ namespace LemonadeStand
 
         public void DisplayRules()
         {
+
             //display plot/purpose/whatever of game (sell lemonade, make profit)
             //display controls (like ability to use "quit" keyword at any time, "store" between days, etc 
             //have a "press enter to continue" that clears the screen 
-
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("██████╗ ██╗   ██╗██╗     ███████╗███████╗   ");
             Console.WriteLine("██╔══██╗██║   ██║██║     ██╔════╝██╔════╝██╗");
             Console.WriteLine("██████╔╝██║   ██║██║     █████╗  ███████╗╚═╝");
             Console.WriteLine("██╔══██╗██║   ██║██║     ██╔══╝  ╚════██║██╗");
             Console.WriteLine("██║  ██║╚██████╔╝███████╗███████╗███████║╚═╝");
             Console.WriteLine("╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝   ");
-
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("You finally have enough money from investors to fulfill your dreams of opening a lemonade stand. ");
             Console.WriteLine(" ");
             System.Threading.Thread.Sleep(100);
