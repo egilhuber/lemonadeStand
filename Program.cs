@@ -93,7 +93,10 @@ namespace LemonadeStand
                 }
                 catch
                 {
+                     GameInterface.CheckInput();
+                     Console.ForegroundColor = ConsoleColor.Red;
                      Console.WriteLine("Invalid entry.");
+                     Console.ForegroundColor = ConsoleColor.White;
                 }
                 
                 
@@ -144,7 +147,10 @@ namespace LemonadeStand
                 }
                 catch
                 {
+                    GameInterface.CheckInput();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Invalid entry.");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
 
                 newGame.StartDay();

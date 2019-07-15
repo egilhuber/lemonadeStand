@@ -8,6 +8,8 @@ namespace LemonadeStand
 {
     class Customer
     {
+        
+        
         //member variables
         public int weatherPref;
         public int sugarPref;

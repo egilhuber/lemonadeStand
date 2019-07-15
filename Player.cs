@@ -8,6 +8,7 @@ namespace LemonadeStand
 {
     class Player
     {
+        
         //member variables
         public int cashBalance;
 
@@ -34,6 +35,8 @@ namespace LemonadeStand
         public int potentialProfit;
 
         public int x = 1;
+
+        
         //ctor
         public Player()
         {

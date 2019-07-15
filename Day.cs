@@ -8,6 +8,7 @@ namespace LemonadeStand
 {
     class Day
     {
+       
         //member variables
         public int cupsSold;
         public int todayProfit;

@@ -8,6 +8,7 @@ namespace LemonadeStand
 {
     class Store
     {
+        
         //member variables
         public string toTheStore;
         public int sugarPrice;
@@ -73,7 +74,7 @@ namespace LemonadeStand
 
         public int SellSugar()
         {
-            sugarPrice = RandomNumber(1, 20);
+            sugarPrice = RandomNumber(1, 10);
             Console.WriteLine($"Sugar is {sugarPrice} cents per cup.");
             Console.WriteLine("How many cups of sugar would you like to purchase?");
             sugarQuant = Convert.ToInt32(Console.ReadLine());
@@ -82,7 +83,7 @@ namespace LemonadeStand
 
         public int SellLemons()
         {
-            lemonsPrice = RandomNumber(5, 15);
+            lemonsPrice = RandomNumber(1, 10);
             Console.WriteLine($"You spent {sugarTotal} cents on sugar");
             Console.WriteLine("---");
             Console.WriteLine($"Lemons are {lemonsPrice} cents each.");

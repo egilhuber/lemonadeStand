@@ -8,6 +8,7 @@ namespace LemonadeStand
 {
     class Weather
     {
+       
         //member variables
         public string todayWeather;
         public int dayOfTheWeek = 0;
@@ -25,7 +26,7 @@ namespace LemonadeStand
         {
             int RandomNumber(int min, int max)
             {
-                System.Threading.Thread.Sleep(250);
+                System.Threading.Thread.Sleep(500);
                 Random weatherOption = new Random();
                 return weatherOption.Next(min, max);
             }

@@ -8,6 +8,7 @@ namespace LemonadeStand
 {
     class UserInterface
     {
+        
         //member variables
 
         //ctor
@@ -79,6 +80,356 @@ namespace LemonadeStand
         {
             //displays cash balance variable from player
             Console.WriteLine($"You have {balance} cents.");
+        }
+
+        public void CheckInput()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("     ___                      ");
+                    Console.WriteLine("   ,'   `.                    ");
+                    Console.WriteLine("  /_. _,. |                   ");
+                    Console.WriteLine(" 0 /0'   | :                  ");
+                    Console.WriteLine("  \\|    / :                  ");
+                    Console.WriteLine("   `'   / /                   ");
+                    Console.WriteLine("       / /                    ");
+                    Console.WriteLine("      : :                     ");
+                    Console.WriteLine("      | :    _______          ");
+                    Console.WriteLine("      :  | ,'       `-._      ");
+                    Console.WriteLine("      '   /    .  .  .  |     ");
+                    Console.WriteLine("       : `' :  :  :  : , :    ");
+                    Console.WriteLine("        |`./  /  /  / : ::    ");
+                    Console.WriteLine("         `. `'../__/ / ,.|    ");
+                    Console.WriteLine("            `'-.____;-'`\\|   ");
+                    Console.WriteLine("                | //   / '|   ");
+                    Console.WriteLine("                 ::|          ");
+                    Console.WriteLine("                 ||\\         ");
+                    Console.WriteLine("                 || \\        ");
+                    Console.WriteLine("                 ||  ||       ");
+                    Console.WriteLine("                 || //        ");
+                    Console.WriteLine("                 ||//         ");
+                    Console.WriteLine("                 ||/          ");
+                    Console.WriteLine("                 ||           ");
+                    Console.WriteLine("                /||           ");
+                    Console.WriteLine("                `||-          ");
+                    Console.WriteLine("              __,':           ");
+                    System.Threading.Thread.Sleep(50);
+                    Console.Clear();
+                    System.Threading.Thread.Sleep(100);
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public void Lemons()
+        {
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Clear();
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@              ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)         ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/   (_)      ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |               ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|  (_)          ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'               ");
+                Console.WriteLine("          '''''         |  |                 ");
+                Console.WriteLine("                        /|  |               ");
+                Console.WriteLine("                       / /| |    (_)         ");
+                Console.WriteLine("                      / / | |                ");
+                Console.WriteLine("                     ( /  |/                 ");
+                Console.WriteLine("                     )/  ( )                 ");
+                Console.WriteLine("                     '    `.`.              ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@              ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)         ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/         ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |           (_)    ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|            ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'     (_)          ");
+                Console.WriteLine("          '''''         |  |                 ");
+                Console.WriteLine("                        /|  |               ");
+                Console.WriteLine("                       / /| |             ");
+                Console.WriteLine("                      / / | |         (_)       ");
+                Console.WriteLine("                     ( /  |/                 ");
+                Console.WriteLine("                     )/  ( )                 ");
+                Console.WriteLine("                     '    `.`.              ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@              ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)         ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/         ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |               ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|       (_)     ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'               ");
+                Console.WriteLine("          '''''         |  |      (_)           ");
+                Console.WriteLine("                        /|  |               ");
+                Console.WriteLine("                       / /| |             ");
+                Console.WriteLine("                      / / | |                ");
+                Console.WriteLine("                     ( /  |/        (_)         ");
+                Console.WriteLine("                     )/  ( )                 ");
+                Console.WriteLine("                     '    `.`.              ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@              ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)         ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/         ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |               ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|            ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'    (_)           ");
+                Console.WriteLine("          '''''         |  |                 ");
+                Console.WriteLine("                        /|  |          (_)     ");
+                Console.WriteLine("                       / /| |             ");
+                Console.WriteLine("                      / / | |                ");
+                Console.WriteLine("                     ( /  |/                 ");
+                Console.WriteLine("                     )/  ( )      (_)           ");
+                Console.WriteLine("                     '    `.`.              ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@              ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)         ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/         ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |               ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|            ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'               ");
+                Console.WriteLine("          '''''         |  |         (_)        ");
+                Console.WriteLine("                        /|  |               ");
+                Console.WriteLine("                       / /| |      (_)       ");
+                Console.WriteLine("                      / / | |                ");
+                Console.WriteLine("                     ( /  |/                 ");
+                Console.WriteLine("                     )/  ( )                 ");
+                Console.WriteLine("                     '    `.`.        (_)      ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@              ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)         ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/         ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |               ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|            ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'               ");
+                Console.WriteLine("          '''''         |  |                 ");
+                Console.WriteLine("                        /|  |          (_)     ");
+                Console.WriteLine("                       / /| |   *          ");
+                Console.WriteLine("                      / / | |        (_)        ");
+                Console.WriteLine("                     ( /  |/            *     ");
+                Console.WriteLine("                     )/  ( )         *   *     ");
+                Console.WriteLine("                     '    `.`.        *      ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@              ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)         ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/         ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |               ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|            ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'               ");
+                Console.WriteLine("          '''''         |  |              *   ");
+                Console.WriteLine("                        /|  |               ");
+                Console.WriteLine("                       / /| |         (_)    ");
+                Console.WriteLine("                      / / | |     *           ");
+                Console.WriteLine("                     ( /  |/              (_)   ");
+                Console.WriteLine("                     )/  ( )                 ");
+                Console.WriteLine("                     '    `.`.              ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@              ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)         ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/         ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |               ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|            ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'    *           ");
+                Console.WriteLine("          '''''         |  |                 ");
+                Console.WriteLine("                        /|  |               ");
+                Console.WriteLine("                       / /| |           *  ");
+                Console.WriteLine("                      / / | |        (_)        ");
+                Console.WriteLine("                     ( /  |/       *          ");
+                Console.WriteLine("                     )/  ( )             (_)    ");
+                Console.WriteLine("                     '    `.`.              ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@              ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)         ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /     *     ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/         ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |               ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|    *        ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'               ");
+                Console.WriteLine("          '''''         |  |                 ");
+                Console.WriteLine("                        /|  |         *      ");
+                Console.WriteLine("                       / /| |             ");
+                Console.WriteLine("                      / / | |   *             ");
+                Console.WriteLine("                     ( /  |/       (_)   *       ");
+                Console.WriteLine("                     )/  ( )                 ");
+                Console.WriteLine("                     '    `.`.        (_)      ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@              ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)  *       ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/         ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |               ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|         *   ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'               ");
+                Console.WriteLine("          '''''         |  |       *          ");
+                Console.WriteLine("                        /|  |            *   ");
+                Console.WriteLine("                       / /| |      *       ");
+                Console.WriteLine("                      / / | |                ");
+                Console.WriteLine("                     ( /  |/           *      ");
+                Console.WriteLine("                     )/  ( )         *  *(_)        ");
+                Console.WriteLine("                     '    `.`.        *      ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@             * ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)    *     ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/         ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |               ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|           * ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'   *            ");
+                Console.WriteLine("          '''''         |  |                 ");
+                Console.WriteLine("                        /|  |         *      ");
+                Console.WriteLine("                       / /| |             ");
+                Console.WriteLine("                      / / | |     *           ");
+                Console.WriteLine("                     ( /  |/              *   ");
+                Console.WriteLine("                     )/  ( )                 ");
+                Console.WriteLine("                     '    `.`.          (_)    ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+                Console.WriteLine("                       @@@@@@                ");
+                Console.WriteLine("          ______      @@ O @@@       *       ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _          ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)      *   ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/         ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |       *        ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|            ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'            *   ");
+                Console.WriteLine("          '''''         |  |                 ");
+                Console.WriteLine("                        /|  |       *        ");
+                Console.WriteLine("                       / /| |             ");
+                Console.WriteLine("                      / / | |                ");
+                Console.WriteLine("                     ( /  |/             *    ");
+                Console.WriteLine("                     )/  ( )           *   *      ");
+                Console.WriteLine("                     '    `.`.          *    ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+
+
+
+                Console.WriteLine("                       @@@@@@           *     ");
+                Console.WriteLine("          ______      @@ O @@@              ");
+                Console.WriteLine("       .-'.-'  |`-.  @@@@ o @@@               ");
+                Console.WriteLine("    .-' .' |   | / `.@@@@@ @@@@@   _    *      ");
+                Console.WriteLine("  .'   /`.  |  |/  .'((()__()))  (_)         ");
+                Console.WriteLine(" .    ;   ` .| |. '  /(  )(  )| / _)         ");
+                Console.WriteLine("(     |-------( )---/ /|    /| / /          ");
+                Console.WriteLine("`.    ;   . '/ || . | | )  (  |_/     *    ");
+                Console.WriteLine("  .    |.'  /  | | ` | |    |               ");
+                Console.WriteLine("   `-.  `. /   |  | .(_/_____|          *  ");
+                Console.WriteLine("      `-._`-.__|_.-'  '\''\'/'               ");
+                Console.WriteLine("          '''''         |  |         *        ");
+                Console.WriteLine("                        /|  |               ");
+                Console.WriteLine("                       / /| |            * ");
+                Console.WriteLine("                      / / | |         *       ");
+                Console.WriteLine("                     ( /  |/               *  ");
+                Console.WriteLine("                     )/  ( )            *        ");
+                Console.WriteLine("                     '    `.`.              ");
+
+                System.Threading.Thread.Sleep(100);
+                Console.Clear();
+                System.Threading.Thread.Sleep(10);
+            }
+
         }
 
         public void DisplayRecipe()
