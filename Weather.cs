@@ -42,7 +42,7 @@ namespace LemonadeStand
             for (int i = 0; i < 7; i++)
             {
                 dayOfTheWeek++;
-                int theWeather = RandomNumber(0, 4);
+                int theWeather = RandomNumber(0, 5);
 
                 if (theWeather == 0)
                 {

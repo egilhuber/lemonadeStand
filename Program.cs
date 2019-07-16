@@ -718,6 +718,7 @@ namespace LemonadeStand
             newDay.TheProfitSoFar(player.cashBalance, newTree.givenLoans);
             Console.Clear();
             Console.WriteLine("End of game");
+            Console.WriteLine($"Your final balance is {player.cashBalance} cents.");
             Console.WriteLine($"{newDay.theProfitSoFar} cents profit overall");
             if (newDay.theProfitSoFar > 0)
             {
